@@ -2,17 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FD Grill | African Comfort Food in Southwest Philadelphia</title>
-  <meta name="description" content="FD Grill serves charcoal-grilled kabobs, Malian platters, West African stews, fresh juices and cold beer at 6732 Elmwood Ave, Philadelphia. Open Mon–Sat 11am–7:30pm.">
-  <link rel="icon" href="images/logo.jpg">
-  <meta property="og:title" content="FD Grill | African Comfort Food">
-  <meta property="og:description" content="Kabobs, Malian platters, West African stews and cold beer on Elmwood Ave, Philadelphia.">
-  <meta property="og:image" content="images/kabobs.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FD Grill | West African Grill in Philadelphia</title>
+  <meta name="description" content="Charcoal-grilled kabobs, Malian platters and slow-cooked West African stews at 6732 Elmwood Ave, Philadelphia. Fresh juices and cold beer. Open Mon–Sat 11am–7:30pm.">
+  <meta name="theme-color" content="#17130f">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="apple-touch-icon" href="img/logo.png">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="FD Grill | West African Grill in Philadelphia">
+  <meta property="og:description" content="Charcoal-grilled kabobs, Malian platters and West African stews on Elmwood Ave.">
+  <meta property="og:image" content="img/kabobs-1280.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" as="image" href="img/kabobs-1280.webp" imagesrcset="img/kabobs-640.webp 640w, img/kabobs-960.webp 960w, img/kabobs-1280.webp 1280w" imagesizes="(max-width: 860px) 100vw, 55vw" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,228 +34,272 @@
       "addressRegion": "PA",
       "addressCountry": "US"
     },
-    "openingHours": "Mo-Sa 11:00-19:30",
-    "priceRange": "$"
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "11:00",
+      "closes": "19:30"
+    }],
+    "priceRange": "$",
+    "hasMenu": "#menu"
   }
   </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a class="skip" href="#menu">Skip to menu</a>
 
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="FD Grill home">
-      <img src="images/logo.jpg" alt="" width="52" height="52">
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#top" aria-label="FD Grill, back to top">
+      <picture>
+        <source srcset="img/logo.webp" type="image/webp">
+        <img src="img/logo.png" alt="" width="44" height="44">
+      </picture>
       <span>FD Grill</span>
     </a>
-    <nav aria-label="Main">
+    <nav class="nav" aria-label="Main">
+      <a href="#signatures">Signatures</a>
       <a href="#menu">Menu</a>
       <a href="#visit">Visit</a>
-      <a class="call" href="tel:+12153657845">Call (215) 365-7845</a>
     </nav>
+    <a class="pill" href="tel:+12153657845">Call (215) 365-7845</a>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="hero-text">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
         <p class="status" id="status" aria-live="polite">Mon–Sat, 11am–7:30pm</p>
-        <h1>African comfort food, fresh favorites and cold beer.</h1>
-        <p class="lede">Charcoal-grilled kabobs, Malian platters and slow-cooked West African stews, on Elmwood Ave in Southwest Philly.</p>
+        <h1 id="hero-title">
+          <span class="line"><span>West African grill,</span></span>
+          <span class="line"><span>fired over charcoal.</span></span>
+        </h1>
+        <p class="lede">Kabobs marinated in house spices, Malian platters and slow-cooked stews, on Elmwood Ave in Southwest Philly. Fresh juices and cold beer, too.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="tel:+12153657845">Call to order</a>
-          <a class="btn btn-ghost" href="#menu">See the menu</a>
+          <a class="btn btn-ember" href="tel:+12153657845">Call to order</a>
+          <a class="btn btn-line" href="#menu">See the menu</a>
         </div>
       </div>
-      <figure class="hero-photo">
-        <img src="images/kabobs.jpg" alt="Charcoal-grilled beef kabobs with onions and peppers on a white plate" width="1230" height="765">
+
+      <figure class="hero-media">
+        <picture>
+          <source type="image/webp" srcset="img/kabobs-640.webp 640w, img/kabobs-960.webp 960w, img/kabobs-1280.webp 1280w" sizes="(max-width: 860px) 100vw, 55vw">
+          <img src="img/kabobs-1280.jpg" alt="Charcoal-grilled chicken kabobs with peppers and onions, fries and fresh tomato on a yellow plate" width="1280" height="693" fetchpriority="high">
+        </picture>
+        <canvas class="embers" id="embers" aria-hidden="true"></canvas>
       </figure>
+
+      <dl class="hero-facts">
+        <div><dt>Where</dt><dd>6732 Elmwood Ave</dd></div>
+        <div><dt>When</dt><dd>Mon–Sat, 11am–7:30pm</dd></div>
+        <div><dt>Order</dt><dd><a href="tel:+12153657845">(215) 365-7845</a></dd></div>
+      </dl>
     </section>
 
-    <div class="cloth" aria-hidden="true"></div>
+    <div class="cloth" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
 
+    <!-- Signatures -->
+    <section class="signatures" id="signatures" aria-labelledby="sig-title">
+      <header class="section-head">
+        <h2 id="sig-title">Start with these</h2>
+        <p>Three plates regulars come back for.</p>
+      </header>
+
+      <article class="dish">
+        <figure class="dish-media reveal">
+          <picture>
+            <source type="image/webp" srcset="img/patte-640.webp 640w, img/patte-960.webp 960w, img/patte-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 58vw">
+            <img src="img/patte-1200.jpg" alt="Patté cut open to show spiced chicken, herbs and boiled egg, with onion sauce on the side" width="1200" height="888" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <div class="dish-copy">
+          <h3>Patté</h3>
+          <p class="dish-price">$5</p>
+          <p>Flaky pastry filled with spiced ground beef or chicken, boiled egg and herbs. Fried to order, with onion sauce for dipping.</p>
+        </div>
+      </article>
+
+      <article class="dish flip">
+        <figure class="dish-media reveal">
+          <picture>
+            <source type="image/webp" srcset="img/stew-640.webp 640w, img/stew-960.webp 960w, img/stew-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 58vw">
+            <img src="img/stew-1400.jpg" alt="Leaf stew in a glass bowl beside a mound of white rice and a scotch bonnet pepper" width="1400" height="634" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <div class="dish-copy">
+          <h3>Leaf stews</h3>
+          <p class="dish-price">$16</p>
+          <p>Cassava leaf, saka-saka or fakoye, slow-cooked with meat and served with white rice or fonio.</p>
+        </div>
+      </article>
+
+      <article class="dish">
+        <figure class="dish-media reveal">
+          <picture>
+            <source type="image/webp" srcset="img/nem-640.webp 640w, img/nem-960.webp 960w, img/nem-1150.webp 1150w" sizes="(max-width: 860px) 100vw, 58vw">
+            <img src="img/nem-1150.jpg" alt="Crispy nem spring rolls, one cut open to show seasoned beef, with house salad" width="1150" height="854" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <div class="dish-copy">
+          <h3>Nem</h3>
+          <p class="dish-price">$14</p>
+          <p>Five crispy West African spring rolls with glass noodles, mushrooms and beef or chicken. With sweet chili sauce and house salad.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Menu -->
     <section class="menu" id="menu" aria-labelledby="menu-title">
-      <div class="menu-head">
-        <h2 id="menu-title">Menu</h2>
-        <p>All prices before tax.</p>
-      </div>
+      <header class="section-head">
+        <h2 id="menu-title">The menu</h2>
+        <p>Prices before tax. Call ahead and we'll have it ready.</p>
+      </header>
 
       <nav class="tabs" aria-label="Menu sections">
-        <a href="#grill">Grill favorites</a>
+        <a href="#grill">Grill</a>
         <a href="#handhelds">Handhelds</a>
         <a href="#platters">Platters</a>
         <a href="#stews">Stews</a>
-        <a href="#sides">Sides</a>
-        <a href="#drinks">Drinks</a>
+        <a href="#sides">Sides &amp; drinks</a>
       </nav>
 
-      <div class="menu-section" id="grill">
-        <div class="section-copy">
-          <h3>Grill favorites</h3>
+      <div class="menu-grid">
+        <details class="cat" id="grill" open>
+          <summary><h3>Grill favorites</h3></summary>
           <ul class="items">
-            <li>
-              <div class="line"><span class="name">Kabob</span><span class="price">$5</span></div>
-              <p>One charcoal-grilled skewer of beef, chicken or mushroom, marinated in house spices.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Kabob combo</span><span class="price">$20</span></div>
-              <p>Charcoal-grilled skewers of beef, chicken or mushroom in house spices, with one side.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Lamb gigot</span><span class="price">$20</span></div>
-              <p>Tender leg of lamb, double cooked in our signature seasoning. Served with one side and onion-mustard sauce.</p>
-            </li>
+            <li><div class="row"><span class="name">Kabob</span><span class="price">$5</span></div>
+              <p>One charcoal-grilled skewer of beef, chicken or mushroom, marinated in house spices.</p></li>
+            <li><div class="row"><span class="name">Kabob combo</span><span class="price">$20</span></div>
+              <p>Charcoal-grilled skewers of beef, chicken or mushroom, with one side.</p></li>
+            <li><div class="row"><span class="name">Lamb gigot</span><span class="price">$20</span></div>
+              <p>Tender leg of lamb, double cooked in our signature seasoning. With one side and onion-mustard sauce.</p></li>
           </ul>
-        </div>
-        <img class="photo" src="images/skewers-fries.jpg" alt="Chicken kabobs with fries on a yellow plate" width="960" height="683" loading="lazy">
-      </div>
+        </details>
 
-      <div class="menu-section flip" id="handhelds">
-        <div class="section-copy">
-          <h3>Handhelds &amp; street bites</h3>
+        <details class="cat" id="handhelds" open>
+          <summary><h3>Handhelds &amp; street bites</h3></summary>
           <ul class="items">
-            <li>
-              <div class="line"><span class="name">Shawarma sandwich</span><span class="price">$10</span></div>
-              <p>Juicy kebab wrapped in warm pita with house sauce, lettuce, tomatoes and onions.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Patté <small>African beef patties</small></span><span class="price">$5</span></div>
-              <p>Flaky pastry filled with spiced ground beef or chicken, boiled egg and herbs.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Nem <small>West African spring rolls</small></span><span class="price">$14</span></div>
-              <p>Five crispy rolls with glass noodles, mushrooms and your choice of beef or chicken. Served with sweet chili sauce and house salad.</p>
-            </li>
+            <li><div class="row"><span class="name">Shawarma sandwich</span><span class="price">$10</span></div>
+              <p>Juicy kebab wrapped in warm pita with house sauce, lettuce, tomatoes and onions.</p></li>
+            <li><div class="row"><span class="name">Patté <small>African beef patties</small></span><span class="price">$5</span></div>
+              <p>Flaky pastry filled with spiced ground beef or chicken, boiled egg and herbs.</p></li>
+            <li><div class="row"><span class="name">Nem <small>West African spring rolls</small></span><span class="price">$14</span></div>
+              <p>Five crispy rolls with glass noodles, mushrooms and beef or chicken. With sweet chili sauce and house salad.</p></li>
           </ul>
-        </div>
-        <div class="pair">
-          <img class="photo" src="images/patties.jpg" alt="Chicken patté cut open to show boiled egg and herbs, with a side of onion sauce" width="1400" height="1036" loading="lazy">
-          <img class="photo" src="images/spring-rolls.jpg" alt="Nem spring rolls with house salad" width="1150" height="854" loading="lazy">
-        </div>
-      </div>
+        </details>
 
-      <div class="menu-section" id="platters">
-        <div class="section-copy">
-          <h3>Platters</h3>
+        <details class="cat" id="platters" open>
+          <summary><h3>Platters</h3></summary>
           <ul class="items">
-            <li>
-              <div class="line"><span class="name">Djouka <small>Malian peanut couscous</small></span><span class="price">$25</span></div>
-              <p>A traditional Malian specialty: fonio steamed with roasted ground peanuts, served with a savory onion sauce and your choice of fried tilapia or a flame-grilled kabob.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Vermicelli <small>slow-cooked onion pasta</small></span><span class="price">$25</span></div>
-              <p>A comforting West African classic. Tender pasta tossed in a rich caramelized onion sauce, slow-simmered for deep flavor and served with your choice of protein.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Zaamè <small>Malian jollof rice</small></span><span class="price">Ask us</span></div>
-              <p>A celebratory Malian classic. Short-grain rice simmered in a rich, spiced tomato and herb sauce until it soaks up every bit of flavor, served with your choice of fish or meat.</p>
-            </li>
+            <li><div class="row"><span class="name">Djouka <small>Malian peanut couscous</small></span><span class="price">$25</span></div>
+              <p>Fonio steamed with roasted ground peanuts, with a savory onion sauce and your choice of fried tilapia or a flame-grilled kabob.</p></li>
+            <li><div class="row"><span class="name">Vermicelli <small>slow-cooked onion pasta</small></span><span class="price">$25</span></div>
+              <p>Tender pasta in a rich caramelized onion sauce, slow-simmered and served with your choice of protein.</p></li>
+            <li><div class="row"><span class="name">Zaamè <small>Malian jollof rice</small></span><span class="price">Ask us</span></div>
+              <p>Short-grain rice simmered in a spiced tomato and herb sauce, served with your choice of fish or meat.</p></li>
           </ul>
-        </div>
-        <div class="pair">
-          <img class="photo" src="images/rice-fish.jpg" alt="Seasoned rice with grilled whole fish, sliced onions and peppers, and a spicy sauce" width="960" height="640" loading="lazy">
-          <img class="photo small" src="images/rice-platter.jpg" alt="Large platter of tomato rice topped with roasted chicken and vegetables" width="335" height="390" loading="lazy">
-        </div>
-      </div>
+        </details>
 
-      <div class="menu-section flip" id="stews">
-        <div class="section-copy">
-          <h3>Grab &amp; go African stews</h3>
-          <p class="note">Every stew is $16 and comes with white rice or fonio.</p>
+        <details class="cat" id="stews" open>
+          <summary><h3>Grab &amp; go stews</h3></summary>
+          <p class="cat-note">Every stew is $16 and comes with white rice or fonio.</p>
           <ul class="items">
-            <li>
-              <div class="line"><span class="name">Peanut stew <small>maafe</small></span><span class="price">$16</span></div>
-              <p>Groundnut stew with beef, slow-cooked in peanut-tomato sauce.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Peanut stew with potato greens</span><span class="price">$16</span></div>
-              <p>Groundnut and potato green stew with meat, slow-cooked in peanut-tomato sauce.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Cassava leaf stew</span><span class="price">$16</span></div>
-              <p>Ground cassava leaves cooked with smoked turkey and beef in an aromatic sauce.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Saka-saka <small>potato greens</small></span><span class="price">$16</span></div>
-              <p>Stewed potato greens with garlic, onions, herbs, beef and palm oil.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Red onion stew</span><span class="price">$16</span></div>
-              <p>Onions and tomatoes low-cooked with vegetables, served with smoked chicken.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Yassa</span><span class="price">$16</span></div>
-              <p>Smoked chicken braised in onion, lemon and mustard sauce. A West African classic.</p>
-            </li>
-            <li>
-              <div class="line"><span class="name">Fakoye</span><span class="price">$16</span></div>
-              <p>Jute leaf stew with lamb or beef, seasoned with West African spices.</p>
-            </li>
+            <li><div class="row"><span class="name">Peanut stew <small>maafe</small></span><span class="price">$16</span></div>
+              <p>Groundnut stew with beef, slow-cooked in peanut-tomato sauce.</p></li>
+            <li><div class="row"><span class="name">Peanut stew with potato greens</span><span class="price">$16</span></div>
+              <p>Groundnut and potato green stew with meat in peanut-tomato sauce.</p></li>
+            <li><div class="row"><span class="name">Cassava leaf stew</span><span class="price">$16</span></div>
+              <p>Ground cassava leaves cooked with smoked turkey and beef in an aromatic sauce.</p></li>
+            <li><div class="row"><span class="name">Saka-saka <small>potato greens</small></span><span class="price">$16</span></div>
+              <p>Stewed potato greens with garlic, onions, herbs, beef and palm oil.</p></li>
+            <li><div class="row"><span class="name">Red onion stew</span><span class="price">$16</span></div>
+              <p>Onions and tomatoes low-cooked with vegetables, with smoked chicken.</p></li>
+            <li><div class="row"><span class="name">Yassa</span><span class="price">$16</span></div>
+              <p>Smoked chicken braised in onion, lemon and mustard sauce.</p></li>
+            <li><div class="row"><span class="name">Fakoye</span><span class="price">$16</span></div>
+              <p>Jute leaf stew with lamb or beef, seasoned with West African spices.</p></li>
           </ul>
-        </div>
-        <div class="pair">
-          <img class="photo" src="images/stew-rice.jpg" alt="Leaf stew in a glass bowl beside a mound of white rice" width="1400" height="634" loading="lazy">
-          <img class="photo small" src="images/red-stew.jpg" alt="Bowl of red stew with tender meat, carrots and green peppers" width="452" height="448" loading="lazy">
-        </div>
-      </div>
+        </details>
 
-      <div class="menu-section small" id="sides">
-        <div class="section-copy">
-          <h3>Sides</h3>
+        <details class="cat" id="sides" open>
+          <summary><h3>Sides</h3></summary>
           <ul class="items compact">
-            <li><div class="line"><span class="name">Sweet plantains</span><span class="price">$5</span></div></li>
-            <li><div class="line"><span class="name">French fries</span><span class="price">$4</span></div></li>
-            <li><div class="line"><span class="name">House salad</span><span class="price">$6</span></div></li>
+            <li><div class="row"><span class="name">Sweet plantains</span><span class="price">$5</span></div></li>
+            <li><div class="row"><span class="name">French fries</span><span class="price">$4</span></div></li>
+            <li><div class="row"><span class="name">House salad</span><span class="price">$6</span></div></li>
           </ul>
-        </div>
-        <img class="torn" src="images/salad.jpg" alt="House salad with tomato, cucumber, onion and lettuce" width="830" height="435" loading="lazy">
-      </div>
+        </details>
 
-      <div class="menu-section small flip" id="drinks">
-        <div class="section-copy">
-          <h3>Drinks</h3>
+        <details class="cat" id="drinks" open>
+          <summary><h3>Drinks</h3></summary>
           <ul class="items compact">
-            <li><div class="line"><span class="name">Ginger juice</span><span class="price">$3</span></div></li>
-            <li><div class="line"><span class="name">Bissap <small>hibiscus juice</small></span><span class="price">$3</span></div></li>
-            <li><div class="line"><span class="name">Baobab kefir</span><span class="price">$4</span></div></li>
-            <li><div class="line"><span class="name">Dégué</span><span class="price">$6</span></div></li>
-            <li><div class="line"><span class="name">Cold beer</span><span class="price">Ask us</span></div></li>
+            <li><div class="row"><span class="name">Ginger juice</span><span class="price">$3</span></div></li>
+            <li><div class="row"><span class="name">Bissap <small>hibiscus juice</small></span><span class="price">$3</span></div></li>
+            <li><div class="row"><span class="name">Baobab kefir</span><span class="price">$4</span></div></li>
+            <li><div class="row"><span class="name">Dégué</span><span class="price">$6</span></div></li>
+            <li><div class="row"><span class="name">Cold beer</span><span class="price">Ask us</span></div></li>
           </ul>
-        </div>
+        </details>
       </div>
 
-      <p class="tax">All items are subject to sales tax. Prices may change; call to confirm.</p>
+      <p class="tax">All items are subject to sales tax. Prices may change.</p>
     </section>
 
-    <div class="cloth" aria-hidden="true"></div>
-
+    <!-- Visit -->
     <section class="visit" id="visit" aria-labelledby="visit-title">
       <div class="visit-copy">
         <h2 id="visit-title">Come say hello</h2>
-        <address>
-          6732 Elmwood Ave<br>
-          Philadelphia, PA
-        </address>
-        <dl class="hours">
-          <div><dt>Monday to Saturday</dt><dd>11am – 7:30pm</dd></div>
-          <div><dt>Sunday</dt><dd>Closed</dd></div>
-        </dl>
+        <address>6732 Elmwood Ave<br>Philadelphia, PA</address>
+        <table class="hours" id="hours">
+          <caption class="sr-only">Opening hours</caption>
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>11am – 7:30pm</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>11am – 7:30pm</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>11am – 7:30pm</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>11am – 7:30pm</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>11am – 7:30pm</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>11am – 7:30pm</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>Closed</td></tr>
+          </tbody>
+        </table>
         <div class="actions">
-          <a class="btn btn-primary" href="tel:+12153657845">Call (215) 365-7845</a>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=FD+Grill+6732+Elmwood+Ave+Philadelphia+PA" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-ember" href="tel:+12153657845">Call (215) 365-7845</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=6732+Elmwood+Ave+Philadelphia+PA" target="_blank" rel="noopener">Get directions</a>
         </div>
       </div>
-      <div class="map">
-        <iframe title="Map showing FD Grill at 6732 Elmwood Ave, Philadelphia" src="https://www.google.com/maps?q=6732+Elmwood+Ave,+Philadelphia,+PA&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <div class="map" id="map">
+        <button class="map-load" type="button" id="map-load">
+          <span class="map-pin" aria-hidden="true"></span>
+          Show map
+        </button>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <img src="images/logo.jpg" alt="FD Grill logo" width="72" height="72" loading="lazy">
-    <p>6732 Elmwood Ave, Philadelphia</p>
-    <p><a href="tel:+12153657845">(215) 365-7845</a></p>
-    <p class="copy">© <span id="year">2026</span> FD Grill</p>
+    <div class="cloth thin" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="footer-inner">
+      <picture>
+        <source srcset="img/logo.webp" type="image/webp">
+        <img src="img/logo.png" alt="FD Grill logo" width="64" height="64" loading="lazy">
+      </picture>
+      <p>6732 Elmwood Ave, Philadelphia</p>
+      <p><a href="tel:+12153657845">(215) 365-7845</a></p>
+      <p class="copy">© <span id="year">2026</span> FD Grill</p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <nav class="dock" aria-label="Quick actions">
+    <a href="tel:+12153657845">Call</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=6732+Elmwood+Ave+Philadelphia+PA" target="_blank" rel="noopener">Directions</a>
+    <a href="#menu">Menu</a>
+  </nav>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
