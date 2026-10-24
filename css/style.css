@@ -304,6 +304,8 @@ h1, h2, h3 { font-family: var(--display); line-height: 1; margin: 0; }
 
 .pair { display: grid; gap: 28px; }
 .pair img:last-child { width: 82%; justify-self: end; }
+/* Small source photos stay near their real size so they don't blur */
+.pair img.small { width: auto; max-width: min(100%, 340px); }
 
 .menu-section.small { grid-template-columns: 1fr 1fr; }
 
