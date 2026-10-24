@@ -293,8 +293,17 @@ h1, h2, h3 { font-family: var(--display); line-height: 1; margin: 0; }
 .torn { width: 100%; }
 .menu-section .torn { transform: rotate(1.5deg); }
 .menu-section.flip .torn { transform: rotate(-1.5deg); }
-.pair { display: grid; gap: 12px; }
-.pair .torn:last-child { width: 82%; justify-self: end; }
+/* Full photos sit like prints on the page, with an offset block of cloth colour */
+.photo {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 12px 12px 0 var(--ochre-pale);
+}
+.menu-section .photo { transform: rotate(1deg); }
+.menu-section.flip .photo { transform: rotate(-1deg); }
+
+.pair { display: grid; gap: 28px; }
+.pair img:last-child { width: 82%; justify-self: end; }
 
 .menu-section.small { grid-template-columns: 1fr 1fr; }
 
@@ -364,7 +373,8 @@ address {
   .visit { grid-template-columns: 1fr; }
   .hero-photo { order: -1; }
   .menu-section.flip > .section-copy { order: 0; }
-  .menu-section .torn { max-width: 520px; }
+  .menu-section .torn,
+  .menu-section .photo { max-width: 560px; }
 }
 
 @media (max-width: 560px) {
