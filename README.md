@@ -2,14 +2,17 @@
 
 One-page site for FD Grill, a West African grill and catering business in Philadelphia. The restaurant opens in 2027.
 
-No build step and no frameworks: open `index.html` in a browser, or put the folder on any static host (GitHub Pages, Netlify, etc.).
+No build step and no frameworks. To preview locally, run `python3 -m http.server` in this folder and open http://localhost:8000. Opening `index.html` straight from disk works too, but browsers block the self-hosted fonts there, so headings fall back to a system font.
 
 ## Files
 
 - `index.html`: all page content, including the full menu
 - `css/style.css`: design tokens at the top (colors, fonts), then each section in page order
 - `js/main.js`: load and scroll animations, folding menu on phones, the catering quote form, and the ember effect over the top photo
-- `img/`: photos in three sizes (640, 960 and full width) as WebP, plus a JPEG fallback
+- `img/`: photos in three or four sizes as WebP, plus a JPEG fallback; favicons
+- `fonts/`: self-hosted Bricolage Grotesque and Figtree, trimmed to Latin characters and the widths and weights the site uses
+- `404.html`: shown by GitHub Pages for any broken link
+- `sitemap.xml`: submit it in Google Search Console once the site is live
 
 ## Common edits
 

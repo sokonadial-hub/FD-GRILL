@@ -2,6 +2,23 @@
    Fire and cloth: a charcoal grill opening, and the mustard-and-indigo
    table cloth from the restaurant's own photos as the signature mark. */
 
+/* Fonts are self-hosted, trimmed to Latin and the widths/weights in use */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../fonts/bricolage-grotesque-latin.woff2") format("woff2");
+  font-weight: 500 800;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("../fonts/figtree-latin.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --charcoal: #17130f;
   --charcoal-2: #221c16;
@@ -153,6 +170,8 @@ p { margin: 0; }
   min-height: 50px;
   padding: 0 24px;
   border-radius: 999px;
+  font-family: inherit;
+  font-size: inherit;
   font-weight: 700;
   text-decoration: none;
   border: 1.5px solid transparent;
@@ -657,7 +676,7 @@ p { margin: 0; }
   width: 100%;
   min-height: 48px;
   padding: 11px 14px;
-  border: 1.5px solid rgba(244, 238, 227, 0.2);
+  border: 1.5px solid rgba(244, 238, 227, 0.4);
   border-radius: 8px;
   background: var(--charcoal);
   color: var(--bone);
@@ -667,7 +686,7 @@ p { margin: 0; }
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .quote textarea { resize: vertical; }
-.quote ::placeholder { color: #7d7466; }
+.quote ::placeholder { color: #8f8677; }
 .quote input:focus,
 .quote select:focus,
 .quote textarea:focus {
@@ -689,13 +708,13 @@ p { margin: 0; }
 .chips span {
   display: inline-block;
   padding: 9px 15px;
-  border: 1.5px solid rgba(244, 238, 227, 0.25);
+  border: 1.5px solid rgba(244, 238, 227, 0.4);
   border-radius: 999px;
   color: var(--bone);
   font-weight: 500;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
 }
-.chips label:hover span { border-color: rgba(244, 238, 227, 0.5); }
+.chips label:hover span { border-color: rgba(244, 238, 227, 0.7); }
 .chips input:checked + span { background: var(--ember); border-color: var(--ember); color: var(--charcoal); }
 .chips input:checked + span::before { content: "✓ "; }
 .chips input:focus-visible + span { outline: 3px solid var(--ember); outline-offset: 2px; }
@@ -867,7 +886,7 @@ p { margin: 0; }
   .brand span { font-size: 1.25rem; }
   .tabs { top: 62px; }
   .name, .price { font-size: 1.2rem; }
-  .field-row { grid-template-columns: 1fr; }
+  .field-row:not(.pair) { grid-template-columns: 1fr; }
   .btn { flex: 1 1 auto; justify-content: center; }
 }
 
