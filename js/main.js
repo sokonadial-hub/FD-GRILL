@@ -17,57 +17,22 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(start);
   setTimeout(start, 600);
 
-  // ---------- Open / closed, in Philadelphia time ----------
-  var OPEN = 11 * 60;
-  var CLOSE = 19 * 60 + 30;
-  var DAYS = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
-
-  function phillyNow() {
-    var parts = new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/New_York",
-      weekday: "short",
-      hour: "numeric",
-      minute: "numeric",
-      hourCycle: "h23"
-    }).formatToParts(new Date());
-    var get = function (t) {
-      for (var i = 0; i < parts.length; i++) if (parts[i].type === t) return parts[i].value;
-    };
-    return { day: DAYS[get("weekday")], minutes: parseInt(get("hour"), 10) * 60 + parseInt(get("minute"), 10) };
-  }
-
-  var now = phillyNow();
-  var status = document.getElementById("status");
-  if (status) {
-    var openDay = now.day !== 0;
-    if (openDay && now.minutes >= OPEN && now.minutes < CLOSE) {
-      var left = CLOSE - now.minutes;
-      status.textContent = left <= 45 ? "Open now. Closing at 7:30pm" : "Open now until 7:30pm";
-      status.classList.add("open");
-    } else if (openDay && now.minutes < OPEN) {
-      status.textContent = "Closed now. Opens today at 11am";
-    } else if (now.day === 6 || now.day === 0) {
-      status.textContent = "Closed now. Opens Monday at 11am";
-    } else {
-      status.textContent = "Closed now. Opens tomorrow at 11am";
-    }
-  }
-  var todayRow = document.querySelector('#hours tr[data-day="' + now.day + '"]');
-  if (todayRow) todayRow.classList.add("today");
-
   // ---------- Top bar border once scrolled ----------
   var topbar = document.getElementById("topbar");
   var onScroll = function () { topbar.classList.toggle("scrolled", window.scrollY > 8); };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // ---------- Reveals: cloth bands and dish photos ----------
+  // ---------- Reveals: cloth bands, photos, the 2027 year ----------
   // Watch each photo's parent: a fully clipped element never counts as visible.
   function reveal(el) {
     if (el.classList.contains("cloth")) el.classList.add("woven");
-    else el.querySelectorAll(".reveal").forEach(function (r) { r.classList.add("in"); });
+    else {
+      el.classList.add("in");
+      el.querySelectorAll(".reveal").forEach(function (r) { r.classList.add("in"); });
+    }
   }
-  var revealTargets = document.querySelectorAll(".cloth, .dish");
+  var revealTargets = document.querySelectorAll(".cloth, .dish, .catering-media, .restaurant");
   if ("IntersectionObserver" in window && !reduceMotion) {
     var revealer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -136,17 +101,86 @@
     }).observe(heroActions);
   }
 
-  // ---------- Map loads only when asked, to keep the page light ----------
-  var mapBtn = document.getElementById("map-load");
-  if (mapBtn) {
-    mapBtn.addEventListener("click", function () {
-      var frame = document.createElement("iframe");
-      frame.title = "Map showing FD Grill at 6732 Elmwood Ave, Philadelphia";
-      frame.src = "https://www.google.com/maps?q=6732+Elmwood+Ave,+Philadelphia,+PA&output=embed";
-      frame.loading = "lazy";
-      frame.referrerPolicy = "no-referrer-when-downgrade";
-      document.getElementById("map").appendChild(frame);
-      mapBtn.remove();
+  // ---------- Catering quote: builds a text message to FD Grill ----------
+  var PHONE = "+12153657845";
+  var form = document.getElementById("quote-form");
+  if (form) {
+    var dateInput = document.getElementById("q-date");
+    var today = new Date();
+    dateInput.min = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+
+    var required = ["q-name", "q-phone", "q-date", "q-guests"];
+
+    function check(id) {
+      var input = document.getElementById(id);
+      var err = document.getElementById(id + "-err");
+      var ok = input.value.trim() !== "" && input.checkValidity();
+      input.setAttribute("aria-invalid", ok ? "false" : "true");
+      if (ok) input.removeAttribute("aria-describedby");
+      else input.setAttribute("aria-describedby", id + "-err");
+      err.hidden = ok;
+      return ok;
+    }
+    required.forEach(function (id) {
+      document.getElementById(id).addEventListener("blur", function () {
+        if (this.getAttribute("aria-invalid")) check(id);
+      });
+      document.getElementById(id).addEventListener("input", function () {
+        if (this.getAttribute("aria-invalid") === "true") check(id);
+      });
+    });
+
+    function formatDate(value) {
+      var d = new Date(value + "T12:00:00");
+      return d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var firstBad = null;
+      required.forEach(function (id) { if (!check(id) && !firstBad) firstBad = id; });
+      if (firstBad) { document.getElementById(firstBad).focus(); return; }
+
+      var f = form.elements;
+      var foods = Array.prototype.filter.call(form.querySelectorAll('input[name="food"]'), function (c) { return c.checked; })
+        .map(function (c) { return c.value; });
+      var lines = [
+        "Catering request for FD Grill",
+        "Name: " + f.name.value.trim(),
+        "Phone: " + f.phone.value.trim(),
+        "Date: " + formatDate(f.date.value),
+        "Guests: " + f.guests.value
+      ];
+      if (f.type.value) lines.push("Event: " + f.type.value);
+      if (f.where.value.trim()) lines.push("Where: " + f.where.value.trim());
+      if (foods.length) lines.push("Food: " + foods.join(", "));
+      if (f.notes.value.trim()) lines.push("Notes: " + f.notes.value.trim());
+      var message = lines.join("\n");
+
+      var sent = document.getElementById("quote-sent");
+      document.getElementById("quote-text").value = message;
+      sent.hidden = false;
+      sent.focus();
+
+      // Phones open Messages with the request filled in; computers keep the copy panel.
+      if (window.matchMedia("(pointer: coarse)").matches) {
+        window.location.href = "sms:" + PHONE + "?&body=" + encodeURIComponent(message);
+      }
+    });
+
+    document.getElementById("quote-copy").addEventListener("click", function () {
+      var btn = this;
+      var text = document.getElementById("quote-text");
+      var done = function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = "Copy request"; }, 2000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text.value).then(done, function () { text.select(); });
+      } else {
+        text.select();
+        try { document.execCommand("copy"); done(); } catch (err) { /* text stays selected for manual copy */ }
+      }
     });
   }
 
