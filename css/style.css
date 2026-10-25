@@ -529,96 +529,234 @@ p { margin: 0; }
 
 .tax { margin-top: 8px; font-size: 0.95rem; color: var(--ink-soft); }
 
-/* ---------- Visit ---------- */
+/* ---------- Catering ---------- */
 
-.visit {
+.section-head.stacked { display: block; }
+.section-head.stacked h2 { font-size: clamp(3rem, 6.8vw, 6rem); max-width: 12ch; }
+.section-head.stacked p { margin-top: 22px; max-width: 46ch; font-size: 1.15rem; }
+
+.catering {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: clamp(32px, 6vw, 88px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "intro media"
+    "booking booking";
+  gap: clamp(32px, 5vw, 72px) clamp(32px, 6vw, 96px);
   align-items: center;
-  padding: clamp(64px, 9vw, 120px) max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(64px, 9vw, 128px) var(--gutter) clamp(48px, 7vw, 96px);
+}
+.catering-intro { grid-area: intro; }
+.catering-media { grid-area: media; }
+.booking { grid-area: booking; }
+.catering .section-head { margin-bottom: 32px; }
+
+.occasions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.occasions li {
+  padding: 8px 16px;
+  border: 1.5px solid var(--rule);
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.catering-media {
+  position: relative;
+  padding-bottom: 22%;
+}
+.catering-media figure { margin: 0; border-radius: 6px; overflow: hidden; }
+.catering-media img { width: 100%; }
+.cm-large { width: 88%; margin-left: auto !important; }
+.cm-small {
+  position: absolute !important;
+  left: 0;
+  bottom: 0;
+  width: 54%;
+  border: 6px solid var(--paper);
+  border-radius: 10px !important;
+}
+
+/* Booking panel */
+.booking {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 5vw, 80px);
+  padding: clamp(28px, 5vw, 64px);
+  border-radius: 10px;
   background: var(--charcoal);
   color: var(--bone);
+  scroll-margin-top: 80px;
 }
-.visit h2 {
-  margin-bottom: 28px;
-  font-size: clamp(3rem, 7.5vw, 6rem);
+.booking h3 {
+  margin-bottom: 24px;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
   font-weight: 800;
-  font-stretch: 75%;
-  letter-spacing: -0.025em;
-}
-address {
-  font-style: normal;
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
-  font-weight: 600;
-  line-height: 1.15;
+  font-stretch: 80%;
 }
 
-.hours {
-  width: 100%;
-  max-width: 400px;
-  margin: 28px 0 32px;
-  border-collapse: collapse;
+.steps ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
 }
-.hours th,
-.hours td {
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(244, 238, 227, 0.12);
-  text-align: left;
+.steps li {
+  position: relative;
+  padding: 0 0 26px 58px;
+  color: var(--bone-soft);
+  counter-increment: step;
+}
+.steps li strong { display: block; margin-bottom: 4px; color: var(--bone); font-size: 1.1rem; }
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-family: var(--display);
+  font-size: 2.6rem;
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 1;
+  color: var(--ember);
+}
+.steps-call { margin-top: 8px; color: var(--bone-soft); }
+.steps-call a { color: var(--bone); font-weight: 700; }
+
+/* Quote form */
+.quote {
+  padding: clamp(22px, 3.5vw, 36px);
+  border-radius: 8px;
+  background: var(--charcoal-2);
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.field { margin: 0 0 18px; padding: 0; border: 0; min-width: 0; }
+.field label,
+.field legend {
+  display: block;
+  margin-bottom: 6px;
+  padding: 0;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--bone-soft);
 }
-.hours td { text-align: right; }
-.hours tr.today th,
-.hours tr.today td { color: var(--bone); font-weight: 700; }
-.hours tr.today th::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 10px;
-  border-radius: 50%;
-  background: var(--ember);
-  vertical-align: 2px;
-}
+.optional { margin-left: 6px; font-size: 0.85rem; color: #8d8473; }
 
-.map {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: 6px;
-  overflow: hidden;
-  background:
-    repeating-linear-gradient(0deg, transparent 0 46px, rgba(244, 238, 227, 0.06) 46px 48px),
-    repeating-linear-gradient(90deg, transparent 0 46px, rgba(244, 238, 227, 0.06) 46px 48px),
-    var(--charcoal-2);
-}
-.map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.map-load {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
+.quote input[type="text"],
+.quote input[type="tel"],
+.quote input[type="date"],
+.quote input[type="number"],
+.quote select,
+.quote textarea {
   width: 100%;
-  border: 0;
-  background: none;
+  min-height: 48px;
+  padding: 11px 14px;
+  border: 1.5px solid rgba(244, 238, 227, 0.2);
+  border-radius: 8px;
+  background: var(--charcoal);
   color: var(--bone);
-  font: 700 1.05rem var(--body);
-  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  color-scheme: dark;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.map-pin {
-  width: 28px;
-  height: 28px;
-  border-radius: 50% 50% 50% 0;
-  background: var(--ember);
-  transform: rotate(-45deg);
-  box-shadow: 0 0 0 10px rgba(232, 120, 42, 0.18);
-  transition: box-shadow 0.3s;
+.quote textarea { resize: vertical; }
+.quote ::placeholder { color: #7d7466; }
+.quote input:focus,
+.quote select:focus,
+.quote textarea:focus {
+  outline: none;
+  border-color: var(--ember);
+  box-shadow: 0 0 0 3px rgba(232, 120, 42, 0.25);
 }
-.map-load:hover .map-pin { box-shadow: 0 0 0 16px rgba(232, 120, 42, 0.18); }
+.quote [aria-invalid="true"] { border-color: #f08a6a; }
+.error { margin-top: 6px; font-size: 0.9rem; color: #f5a58a; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips label { margin: 0; cursor: pointer; }
+.chips input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.chips span {
+  display: inline-block;
+  padding: 9px 15px;
+  border: 1.5px solid rgba(244, 238, 227, 0.25);
+  border-radius: 999px;
+  color: var(--bone);
+  font-weight: 500;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.chips label:hover span { border-color: rgba(244, 238, 227, 0.5); }
+.chips input:checked + span { background: var(--ember); border-color: var(--ember); color: var(--charcoal); }
+.chips input:checked + span::before { content: "✓ "; }
+.chips input:focus-visible + span { outline: 3px solid var(--ember); outline-offset: 2px; }
+.chips label:active span { transform: scale(0.96); }
+
+.btn-block { width: 100%; justify-content: center; margin-top: 6px; cursor: pointer; font-size: 1.05rem; }
+.form-note { margin-top: 10px; font-size: 0.9rem; color: var(--bone-soft); }
+
+.sent {
+  margin-top: 22px;
+  padding: 20px;
+  border-left: 3px solid var(--ember);
+  border-radius: 6px;
+  background: rgba(232, 120, 42, 0.08);
+}
+.sent:focus { outline: none; }
+.sent h4 { margin: 0 0 6px; font-family: var(--display); font-size: 1.5rem; font-stretch: 85%; }
+.sent p { color: var(--bone-soft); }
+.sent a { color: var(--bone); font-weight: 700; }
+.sent textarea { margin: 14px 0 12px; font-size: 0.95rem; }
+.sent .btn { cursor: pointer; background: none; color: var(--bone); font: inherit; font-weight: 700; }
+.sent .btn:hover { background: var(--bone); color: var(--charcoal); }
+
+/* ---------- Restaurant 2027 ---------- */
+
+.restaurant {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 80px);
+  align-items: center;
+  padding: clamp(72px, 10vw, 140px) max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  background: var(--charcoal);
+  color: var(--bone);
+  overflow: hidden;
+}
+.year {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(6rem, 19vw, 17rem);
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 0.8;
+  letter-spacing: -0.03em;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ember);
+}
+.restaurant h2 {
+  font-size: clamp(2.4rem, 4.6vw, 4rem);
+  font-weight: 800;
+  font-stretch: 78%;
+  letter-spacing: -0.02em;
+}
+.restaurant-copy > p { margin: 20px 0 30px; max-width: 40ch; font-size: 1.15rem; color: var(--bone-soft); }
+
+.js .year { opacity: 0; transform: translateY(40px); }
+.restaurant.in .year {
+  opacity: 1;
+  transform: none;
+  transition: opacity 1s ease, transform 1.2s var(--ease-out);
+}
 
 /* ---------- Footer ---------- */
 
@@ -663,6 +801,14 @@ address {
   .dish.flip .dish-media { order: 0; }
   .dish-media { margin: 0 calc(var(--gutter) * -1); border-radius: 0; }
 
+  .catering {
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "media" "booking";
+  }
+  .booking { grid-template-columns: 1fr; margin: 0 calc(var(--gutter) * -1); border-radius: 0; }
+  .quote { margin: 0 calc(clamp(28px, 5vw, 64px) * -1 + 8px); }
+  .restaurant { grid-template-columns: 1fr; }
+
   .menu-grid { grid-template-columns: 1fr; }
   #stews { grid-row: auto; }
   .cat summary { cursor: pointer; padding: 18px 0; }
@@ -680,8 +826,6 @@ address {
   .cat:last-child { border-bottom: 2px solid var(--ink); }
   .items { margin-bottom: 20px; }
 
-  .visit { grid-template-columns: 1fr; }
-  .map { aspect-ratio: 16 / 11; }
 
   /* Thumb-reach actions */
   .dock {
@@ -723,6 +867,7 @@ address {
   .brand span { font-size: 1.25rem; }
   .tabs { top: 62px; }
   .name, .price { font-size: 1.2rem; }
+  .field-row { grid-template-columns: 1fr; }
   .btn { flex: 1 1 auto; justify-content: center; }
 }
 
@@ -741,7 +886,8 @@ address {
   .js .hero-facts,
   .js .hero-media img,
   .js .reveal img,
-  .js .cloth span { transform: none; opacity: 1; }
+  .js .cloth span,
+  .js .year { transform: none; opacity: 1; }
   .js .hero-media,
   .js .reveal { clip-path: none; }
   .embers { display: none; }
