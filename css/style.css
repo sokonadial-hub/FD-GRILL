@@ -412,14 +412,7 @@ p { margin: 0; }
   font-stretch: 75%;
   letter-spacing: -0.02em;
 }
-.dish-price {
-  margin: 10px 0 18px;
-  font-family: var(--display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--ember-deep);
-}
-.dish-copy p:last-child { max-width: 38ch; color: var(--ink-soft); font-size: 1.1rem; }
+.dish-copy p:last-child { margin-top: 18px; max-width: 38ch; color: var(--ink-soft); font-size: 1.1rem; }
 
 /* Photos unveil once as they scroll into view */
 .js .reveal { clip-path: inset(100% 0 0 0); }
@@ -513,15 +506,7 @@ p { margin: 0; }
 .items.compact li { padding: 10px 0; }
 .items p { margin-top: 4px; max-width: 56ch; color: var(--ink-soft); }
 
-.row { display: flex; align-items: baseline; gap: 12px; }
-.row::after {
-  content: "";
-  order: 1;
-  flex: 1;
-  min-width: 20px;
-  border-bottom: 2px dotted #cdbf9c;
-  transform: translateY(-5px);
-}
+.row { display: block; }
 .name {
   font-family: var(--display);
   font-size: 1.35rem;
@@ -537,16 +522,41 @@ p { margin: 0; }
   font-stretch: 100%;
   color: var(--ember-deep);
 }
-.price {
-  order: 2;
-  font-family: var(--display);
-  font-size: 1.35rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
+
 
 .tax { margin-top: 8px; font-size: 0.95rem; color: var(--ink-soft); }
+
+/* ---------- Story ---------- */
+
+.story {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(64px, 9vw, 128px) var(--gutter) 0;
+}
+.story-media { margin: 0; border-radius: 6px; overflow: hidden; }
+.story-media img { width: 100%; }
+.story h2 {
+  font-size: clamp(2.6rem, 5.4vw, 4.8rem);
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+}
+.story-lead {
+  margin: 28px 0 18px;
+  max-width: 34ch;
+  font-family: var(--display);
+  font-size: clamp(1.35rem, 2.1vw, 1.7rem);
+  font-weight: 600;
+  font-stretch: 90%;
+  line-height: 1.25;
+  color: var(--ember-deep);
+}
+.story-copy > p:last-child { max-width: 52ch; font-size: 1.1rem; color: var(--ink-soft); }
 
 /* ---------- Catering ---------- */
 
@@ -669,6 +679,7 @@ p { margin: 0; }
 
 .quote input[type="text"],
 .quote input[type="tel"],
+.quote input[type="email"],
 .quote input[type="date"],
 .quote input[type="number"],
 .quote select,
@@ -731,6 +742,9 @@ p { margin: 0; }
   background: rgba(232, 120, 42, 0.08);
 }
 .sent:focus { outline: none; }
+.sent.failed { border-left-color: #f5a58a; background: rgba(245, 165, 138, 0.08); }
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.quote button[disabled] { opacity: 0.7; cursor: progress; }
 .sent h4 { margin: 0 0 6px; font-family: var(--display); font-size: 1.5rem; font-stretch: 85%; }
 .sent p { color: var(--bone-soft); }
 .sent a { color: var(--bone); font-weight: 700; }
@@ -811,9 +825,8 @@ p { margin: 0; }
     margin: 0 calc(var(--gutter) * -1);
     border-radius: 0;
   }
-  .hero-facts { grid-template-columns: auto auto; justify-content: space-between; }
+  .hero-facts { grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 12px 16px; }
   .hero-facts dd { white-space: nowrap; }
-  .hero-facts div:last-child { display: none; }
 
   .dish,
   .dish.flip { grid-template-columns: 1fr; gap: 20px; }
@@ -827,6 +840,8 @@ p { margin: 0; }
   .booking { grid-template-columns: 1fr; margin: 0 calc(var(--gutter) * -1); border-radius: 0; }
   .quote { margin: 0 calc(clamp(28px, 5vw, 64px) * -1 + 8px); }
   .restaurant { grid-template-columns: 1fr; }
+  .story { grid-template-columns: 1fr; }
+  .story-media { margin: 0 calc(var(--gutter) * -1); border-radius: 0; }
 
   .menu-grid { grid-template-columns: 1fr; }
   #stews { grid-row: auto; }
@@ -885,7 +900,7 @@ p { margin: 0; }
   .pill { padding: 8px 13px; font-size: 0.9rem; }
   .brand span { font-size: 1.25rem; }
   .tabs { top: 62px; }
-  .name, .price { font-size: 1.2rem; }
+  .name { font-size: 1.2rem; }
   .field-row:not(.pair) { grid-template-columns: 1fr; }
   .btn { flex: 1 1 auto; justify-content: center; }
 }
