@@ -7,8 +7,8 @@
   <meta name="description" content="Charcoal-grilled kabobs, Malian platters and slow-cooked West African stews, catered for parties, offices and celebrations in Philadelphia. Restaurant opening 2027. Call or text (215) 365-7845.">
   <meta name="theme-color" content="#17130f">
   <link rel="canonical" href="https://sokonadial-hub.github.io/FD-GRILL/">
-  <link rel="icon" type="image/png" href="img/logo.png">
-  <link rel="apple-touch-icon" href="img/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sokonadial-hub.github.io/FD-GRILL/">
   <meta property="og:title" content="FD Grill | West African Catering in Philadelphia">
@@ -19,9 +19,8 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preload" as="image" href="img/beef-kabobs-1280.webp" imagesrcset="img/beef-kabobs-640.webp 640w, img/beef-kabobs-960.webp 960w, img/beef-kabobs-1280.webp 1280w, img/beef-kabobs-1600.webp 1600w" imagesizes="(max-width: 860px) 100vw, 55vw" type="image/webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/bricolage-grotesque-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/figtree-latin.woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -141,23 +140,23 @@
           <div class="field-row">
             <div class="field">
               <label for="q-name">Your name</label>
-              <input id="q-name" name="name" type="text" autocomplete="name" required>
+              <input id="q-name" name="name" type="text" autocomplete="name" enterkeyhint="next" required>
               <p class="error" id="q-name-err" hidden>Add your name so we know who to reply to.</p>
             </div>
             <div class="field">
               <label for="q-phone">Phone</label>
-              <input id="q-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+              <input id="q-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" enterkeyhint="next" required>
               <p class="error" id="q-phone-err" hidden>Add a phone number we can reach you on.</p>
             </div>
           </div>
-          <div class="field-row">
+          <div class="field-row pair">
             <div class="field">
               <label for="q-date">Event date</label>
               <input id="q-date" name="date" type="date" required>
               <p class="error" id="q-date-err" hidden>Pick the date of your event.</p>
             </div>
             <div class="field">
-              <label for="q-guests">Number of guests</label>
+              <label for="q-guests">Guests</label>
               <input id="q-guests" name="guests" type="number" min="1" inputmode="numeric" required>
               <p class="error" id="q-guests-err" hidden>Add roughly how many people you're feeding.</p>
             </div>
