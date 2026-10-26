@@ -12,7 +12,7 @@ No build step and no frameworks. To preview locally, run `python3 -m http.server
 - `img/`: photos in three or four sizes as WebP, plus a JPEG fallback; favicons
 - `fonts/`: self-hosted Bricolage Grotesque and Figtree, trimmed to Latin characters and the widths and weights the site uses
 - `404.html`: shown by GitHub Pages for any broken link
-- `sitemap.xml`: submit it in Google Search Console once the site is live
+- `sitemap.xml` and `robots.txt`: submit https://fdgrill.com/sitemap.xml in Google Search Console
 
 ## Common edits
 
@@ -27,4 +27,4 @@ Animations use only transforms, opacity and clip-path, so they stay smooth on ph
 
 ## Publishing
 
-The site is served by GitHub Pages from the `main` branch, root folder, at https://sokonadial-hub.github.io/FD-GRILL/. `.nojekyll` tells Pages to serve the files as they are.
+The site is served by GitHub Pages from the `main` branch, root folder, at https://fdgrill.com/. `CNAME` holds the custom domain; `.nojekyll` tells Pages to serve the files as they are. DNS for fdgrill.com points at GitHub Pages (A records for the apex, a CNAME for `www`).
