@@ -65,7 +65,8 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 picture { display: contents; }
 a { color: inherit; }
-h1, h2, h3 { margin: 0; font-family: var(--display); line-height: 0.95; }
+h1, h2, h3 { margin: 0; font-family: var(--display); line-height: 0.95; text-wrap: balance; }
+p { text-wrap: pretty; }
 p { margin: 0; }
 
 :focus-visible {
@@ -493,11 +494,10 @@ p { margin: 0; }
 .cat[open]::details-content { block-size: auto; }
 
 .cat-note {
-  margin: 4px 0 8px;
-  padding: 10px 14px;
-  background: var(--ochre-pale);
-  border-left: 3px solid var(--ochre);
-  font-size: 0.97rem;
+  margin: -2px 0 6px;
+  max-width: 46ch;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
 }
 
 .items { list-style: none; margin: 0 0 36px; padding: 0; }
@@ -582,18 +582,27 @@ p { margin: 0; }
 .catering .section-head { margin-bottom: 32px; }
 
 .occasions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: 10px 32px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .occasions li {
-  padding: 8px 16px;
-  border: 1.5px solid var(--rule);
-  border-radius: 999px;
+  position: relative;
+  padding-left: 20px;
   font-weight: 500;
+}
+.occasions li::before {
+  /* small square of cloth ochre: a list marker, not a button */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background: var(--ochre);
 }
 
 .catering-media {
@@ -902,6 +911,7 @@ p { margin: 0; }
   .tabs { top: 62px; }
   .name { font-size: 1.2rem; }
   .field-row:not(.pair) { grid-template-columns: 1fr; }
+  .occasions { grid-template-columns: 1fr; }
   .btn { flex: 1 1 auto; justify-content: center; }
 }
 
