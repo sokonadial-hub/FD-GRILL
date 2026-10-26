@@ -32,3 +32,7 @@ Animations use only transforms, opacity and clip-path, so they stay smooth on ph
 ## Publishing
 
 The site is served by GitHub Pages from the `main` branch, root folder, at https://fdgrill.com/. `CNAME` holds the custom domain; `.nojekyll` tells Pages to serve the files as they are. DNS for fdgrill.com points at GitHub Pages (A records for the apex, a CNAME for `www`).
+
+## Photo credits
+
+`img/catering-serving-*` (Adobe Stock #454202736) and `img/catering-grill-*` (Adobe Stock #1223311706) are licensed from Adobe Stock under FD Grill's Adobe account (standard license). All other food photos are FD Grill's own.
