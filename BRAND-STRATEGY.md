@@ -1,5 +1,7 @@
 # FD brand strategy: West African cooking, refined by fire
 
+**Status: paused.** The owners have put this strategy on hold; the site and `BRAND-VOICE.md` stay as they are for now.
+
 Working draft, October 2026. This document sets the strategy, positioning and image for FD as it grows from a catering business into a full-service restaurant opening in 2027. `BRAND-VOICE.md` covers day-to-day writing; this document sits above it.
 
 ---

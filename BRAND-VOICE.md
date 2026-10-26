@@ -2,10 +2,10 @@
 
 How FD Grill sounds, on the website, menus, social posts, emails and texts.
 
-**Positioning:** Home of West African barbecue.
+**Positioning:** Home of the African grill.
 **Tagline:** From our family's table to yours.
 
-Use them together: the positioning says what we are, the tagline says how it feels. "Home of West African barbecue. From our family's table to yours."
+Use them together: the positioning says what we are, the tagline says how it feels. "Home of the African grill. From our family's table to yours."
 
 ## Who we are, as a person
 
@@ -55,7 +55,7 @@ What both want from us: specifics. The fire, the spices, the cut, the hours on t
 
 In this order:
 
-1. **West African barbecue.** Live fire, charcoal and smoke, with West African spice. This is what we lead with and what sets us apart.
+1. **The African grill.** Live fire, charcoal and smoke, with West African spice. This is what we lead with and what sets us apart.
 2. **Family and heritage.** A family business, rooted in our family's heritage. These are the dishes we grew up with.
 3. **Whole, natural ingredients, cooked with care.** Real cuts, fresh produce, house spices, stews that simmer, pastry folded by hand.
 4. **More than 20 years of experience.** Proof without bragging.
@@ -89,12 +89,12 @@ The voice stays the same; the tone shifts.
 
 | Use | Avoid | Why |
 |---|---|---|
-| barbecue, West African barbecue | BBQ (in site copy), Bar-B-Q | Spell it out; "#BBQ" is fine as a social hashtag |
+| grill, the African grill, live fire | barbecue, BBQ (in site copy) | "Grill" is our word; "#BBQ" is fine as a social hashtag |
 | live fire, charcoal, smoke, char, coals | "flame-kissed", "smokin'" | Plain, sensory, true |
 | wood-smoked, wood-fired | (only when true) | A claim foodies will check; use it only for food actually cooked over wood |
 | whole ingredients, natural ingredients | all-natural, 100% natural, organic | "All-natural" and "organic" are regulated or litigated claims |
 | kabob | kebab, kabab | One spelling everywhere |
-| West African, Malian | African (alone), ethnic, exotic | Be specific; never "other" the food |
+| West African, Malian | African (alone, except in "the African grill"), ethnic, exotic | Be specific; never "other" the food |
 | whole ingredients, house spices | authentic, artisanal, gourmet | Show it, don't label it |
 | catering, your event | services, solutions | We cook for people, not "clients" |
 | quote | pricing, packages | We price each event for its guest count |
