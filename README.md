@@ -14,6 +14,10 @@ No build step and no frameworks. To preview locally, run `python3 -m http.server
 - `404.html`: shown by GitHub Pages for any broken link
 - `sitemap.xml` and `robots.txt`: submit https://fdgrill.com/sitemap.xml in Google Search Console
 
+## Writing for FD Grill
+
+New copy (site, menus, social, email) should follow [BRAND-VOICE.md](BRAND-VOICE.md): warm, rooted, plain-spoken, quietly confident.
+
 ## Common edits
 
 - **Change a price or dish:** find the item in the menu section of `index.html`; each dish is one `<li>`.

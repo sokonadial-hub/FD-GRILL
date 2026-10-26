@@ -809,6 +809,14 @@ p { margin: 0; }
 }
 .footer img { width: 64px; height: 64px; margin: 0 auto 14px; border-radius: 50%; }
 .footer p { margin: 4px 0; }
+.footer .tagline {
+  margin-bottom: 10px;
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-stretch: 85%;
+  color: var(--bone);
+}
 .footer a { color: var(--bone); }
 .footer .copy { margin-top: 14px; font-size: 0.9rem; color: #8d8473; }
 
