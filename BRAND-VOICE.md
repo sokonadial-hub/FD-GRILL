@@ -48,7 +48,7 @@ What both want from us: specifics. The fire, the spices, the cut, the hours on t
 ### Quietly confident
 - **We are:** sure of the food and patient about the future. Twenty years of cooking speaks for itself.
 - **We are not:** pushy. No countdowns, "limited time", or "book before it's too late".
-- **Sounds like:** "Until the doors open, book us for your event."
+- **Sounds like:** "Sit-down dining comes to FD Grill in 2027."
 - **Doesn't sound like:** "Spots are filling FAST, book NOW!"
 
 ## What we always come back to
@@ -59,7 +59,7 @@ In this order:
 2. **Family and heritage.** A family business, rooted in our family's heritage. These are the dishes we grew up with.
 3. **Whole, natural ingredients, cooked with care.** Real cuts, fresh produce, house spices, stews that simmer, pastry folded by hand.
 4. **More than 20 years of experience.** Proof without bragging.
-5. **Catering now, our own table in 2027.** We're bringing the food to you while our restaurant is renovated.
+5. **A new chapter.** We already have our Philadelphia location; we're adding a full kitchen and opening it for sit-down dining in 2027. Catering carries on as always. Tell it as a success story: we're growing, not starting out. Never say "20 years in the making", and never suggest we don't have a place yet.
 
 ## Tone by situation
 
@@ -72,7 +72,7 @@ The voice stays the same; the tone shifts.
 | Confirmation | Grateful | "Thank you for thinking of us. We'll be in touch soon to plan your menu." |
 | Something went wrong | Calm, blame-free, gives a next step | "We couldn't send that just now. Your details are below." |
 | Social posts | Warm, a little playful, fire first | "Coals are lit. Lamb's on. Saturday's wedding is going to smell incredible." |
-| 2027 opening news | Proud, unhurried | "Our own dining room, coming 2027." |
+| 2027 opening news | Proud, celebratory, like an announcement | "Announcing our dining room: sit-down dining comes to FD Grill in 2027." |
 
 ## Style rules
 
