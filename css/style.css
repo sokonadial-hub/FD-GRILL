@@ -792,6 +792,7 @@ p { margin: 0; }
   letter-spacing: -0.02em;
 }
 .restaurant-copy > p { margin: 20px 0 30px; max-width: 40ch; font-size: 1.15rem; color: var(--bone-soft); }
+.restaurant-copy > p.announce { margin: 0 0 16px; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.08em; color: var(--ochre); }
 
 .js .year { opacity: 0; transform: translateY(40px); }
 .restaurant.in .year {

@@ -1,6 +1,6 @@
 # FD Grill website
 
-One-page site for FD Grill, a family-run West African grill and catering business in Philadelphia with over 20 years of experience. The restaurant is under renovation for a 2027 opening.
+One-page site for FD Grill, a family-run West African grill and catering business in Philadelphia with over 20 years of experience. Sit-down dining opens at its Philadelphia location in 2027, once the new kitchen is built.
 
 No build step and no frameworks. To preview locally, run `python3 -m http.server` in this folder and open http://localhost:8000. Opening `index.html` straight from disk works too, but browsers block the self-hosted fonts there, so headings fall back to a system font.
 
