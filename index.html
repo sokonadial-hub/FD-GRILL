@@ -44,11 +44,26 @@
 <body>
   <a class="skip" href="#catering">Skip to catering</a>
 
-  <aside class="banner" aria-label="Catering and our location">
-    <div class="banner-inner">
-      <p class="banner-head"><a href="#quote">Now catering events, big and small.</a></p>
-      <p class="banner-sub"><a class="banner-place" href="https://www.google.com/maps/search/?api=1&amp;query=6732+Elmwood+Ave+Philadelphia+PA">6732 Elmwood Ave, Philadelphia, PA</a> <span class="banner-note">Our home is being renovated into a full sit&#8209;down restaurant.</span></p>
+  <aside class="ticker" aria-label="Catering and our location">
+    <div class="ticker-window">
+      <div class="ticker-track">
+        <ul class="ticker-group">
+          <li><a class="ticker-lead" href="#quote">Now catering events, big and small</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=6732+Elmwood+Ave+Philadelphia+PA">6732 Elmwood Ave, Philadelphia, PA</a></li>
+          <li>Our home is being renovated into a full sit&#8209;down restaurant</li>
+          <li><a href="tel:+16102569268">Book us: (610) 256&#8209;9268</a></li>
+        </ul>
+        <ul class="ticker-group" aria-hidden="true">
+          <li><a class="ticker-lead" href="#quote" tabindex="-1">Now catering events, big and small</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=6732+Elmwood+Ave+Philadelphia+PA" tabindex="-1">6732 Elmwood Ave, Philadelphia, PA</a></li>
+          <li>Our home is being renovated into a full sit&#8209;down restaurant</li>
+          <li><a href="tel:+16102569268" tabindex="-1">Book us: (610) 256&#8209;9268</a></li>
+        </ul>
+      </div>
     </div>
+    <button class="ticker-toggle" type="button" aria-pressed="false" aria-label="Pause announcement">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path class="i-pause" d="M4 3h3v10H4zM9 3h3v10H9z"/><path class="i-play" d="M5 3l8 5-8 5z"/></svg>
+    </button>
   </aside>
 
   <header class="topbar" id="topbar">
