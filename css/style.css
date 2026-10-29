@@ -95,6 +95,25 @@ p { margin: 0; }
 }
 .skip:focus { left: 8px; }
 
+/* ---------- Location banner ---------- */
+
+.banner {
+  background: var(--ochre);
+  color: var(--charcoal);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  text-align: center;
+}
+.banner p { margin: 0; padding: 9px var(--gutter); }
+.banner a { color: inherit; text-underline-offset: 3px; }
+.banner-place { font-weight: 700; text-decoration: none; }
+.banner-place:hover { text-decoration: underline; }
+.banner-note::before { content: "·"; margin: 0 10px; }
+@media (max-width: 860px) {
+  .banner-place { display: block; }
+  .banner-note::before { content: none; }
+}
+
 /* ---------- Top bar ---------- */
 
 .topbar {
