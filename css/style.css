@@ -241,6 +241,7 @@ p { margin: 0; }
   letter-spacing: -0.01em;
 }
 .brand img { width: 40px; height: 40px; border-radius: 50%; }
+.brand span { white-space: nowrap; }
 
 .nav { display: flex; gap: 28px; }
 .nav a {
@@ -941,7 +942,7 @@ p { margin: 0; }
 
 @media (max-width: 860px) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "media" "copy" "facts";
     padding-top: 20px;
   }
@@ -1045,6 +1046,21 @@ p { margin: 0; }
   .field-row:not(.pair) { grid-template-columns: 1fr; }
   .occasions { grid-template-columns: 1fr; }
   .btn { flex: 1 1 auto; justify-content: center; }
+}
+
+/* Short screens (phones in landscape): the ticker scrolls away so pinned bars
+   don't cover half the screen; the header alone stays pinned */
+@media (max-height: 500px) {
+  :root { --ticker-h: 0px; }
+  .ticker { position: relative; }
+}
+
+/* Small phones (320–380px): keep the headline and header inside the screen */
+@media (max-width: 380px) {
+  .hero h1 { font-size: 13vw; }
+  .pill-long { display: none; }
+  .hero-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero-facts dd { white-space: normal; }
 }
 
 @media (prefers-reduced-motion: reduce) {
