@@ -493,7 +493,6 @@ p { margin: 0; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(48px, 6vw, 88px) clamp(24px, 4vw, 56px);
 }
-.dishes:focus-visible { outline: 2px solid var(--ember); outline-offset: 8px; }
 .dish { margin: 0; }
 .dish.feature {
   grid-column: 1 / -1;
@@ -955,31 +954,25 @@ p { margin: 0; }
   .hero-facts { grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 12px 16px; }
   .hero-facts dd { white-space: nowrap; }
 
-  /* Phones: the three dishes become a swipeable row, the next card peeking in */
-  .dishes {
-    display: flex;
-    gap: 14px;
-    margin: 0 calc(var(--gutter) * -1);
-    padding: 0 var(--gutter) 6px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 var(--gutter);
-    scrollbar-width: none;
-    overscroll-behavior-x: contain;
-  }
-  .dishes::-webkit-scrollbar { display: none; }
-  .dishes:focus-visible { outline-offset: -2px; }
-  .dish,
-  .dish.feature { display: block; flex: 0 0 84%; scroll-snap-align: start; }
-  .dish .dish-media,
-  .dish:not(.feature) .dish-media { aspect-ratio: 4 / 3; }
-  .dish .dish-media img { height: 100%; object-fit: cover; }
-  .dish .dish-copy,
-  .dish:not(.feature) .dish-copy { padding: 18px 0 0; }
-  .dish h3,
-  .dish.feature h3 { font-size: 2.4rem; }
-  .dish-copy p:last-child,
+  /* Phones: the lead dish as one large card, the other two as compact rows.
+     Everything stays visible; no sideways swiping in the main content. */
+  .dishes { grid-template-columns: 1fr; gap: 28px; }
+  .dish.feature { display: block; }
+  .dish.feature .dish-media { aspect-ratio: 4 / 3; }
+  .dish.feature .dish-media img { height: 100%; object-fit: cover; }
+  .dish.feature .dish-copy { padding: 18px 0 0; }
+  .dish.feature h3 { font-size: 2.6rem; }
   .dish.feature .dish-copy p:last-child { margin-top: 8px; font-size: 1rem; }
+  .dish:not(.feature) {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 16px;
+    align-items: center;
+  }
+  .dish:not(.feature) .dish-media { aspect-ratio: 1; }
+  .dish:not(.feature) .dish-copy { padding: 0; }
+  .dish:not(.feature) h3 { font-size: 1.9rem; }
+  .dish:not(.feature) .dish-copy p:last-child { margin-top: 6px; font-size: 0.95rem; line-height: 1.5; }
 
   .catering {
     grid-template-columns: 1fr;
