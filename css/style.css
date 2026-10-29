@@ -119,16 +119,19 @@ p { margin: 0; }
 .ticker-track {
   display: flex;
   width: max-content;
-  animation: ticker 38s linear infinite;
+  animation: ticker 44s linear infinite;
 }
 .ticker:hover .ticker-track,
 .ticker:focus-within .ticker-track,
 .ticker.paused .ticker-track { animation-play-state: paused; }
 @keyframes ticker { to { transform: translateX(-50%); } }
 
+/* Each copy is at least as wide as the screen, so a message never shows twice at once */
 .ticker-group {
+  flex: none;
   display: flex;
   align-items: center;
+  min-width: calc(100vw + 20rem);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -136,26 +139,43 @@ p { margin: 0; }
   font-size: 0.98rem;
   font-weight: 600;
 }
-.ticker-group li { display: flex; align-items: center; }
-/* a charcoal ember between messages */
+.ticker-group li {
+  position: relative;
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 34px;
+}
+/* a small flame between messages */
 .ticker-group li::after {
   content: "";
-  width: 7px;
-  height: 7px;
-  margin: 0 28px;
-  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 11px;
+  height: 14px;
+  transform: translate(50%, -50%);
   background: var(--charcoal);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath d='M5.5 0C6.6 2.6 10 4.6 10 8.6A4.5 4.5 0 0 1 1 8.6C1 6.6 2.1 5.4 3 4.6c.1 1.5.8 2.4 1.7 2.7C4.3 5 4.6 2.4 5.5 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath d='M5.5 0C6.6 2.6 10 4.6 10 8.6A4.5 4.5 0 0 1 1 8.6C1 6.6 2.1 5.4 3 4.6c.1 1.5.8 2.4 1.7 2.7C4.3 5 4.6 2.4 5.5 0z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .ticker a { color: inherit; text-decoration: none; text-underline-offset: 3px; }
 .ticker a:hover, .ticker a:focus-visible { text-decoration: underline; }
 .ticker a:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 2px; }
-.ticker-lead {
+.ticker .ticker-lead {
+  padding: 5px 16px 6px;
+  border-radius: 999px;
+  background: var(--charcoal);
+  color: var(--bone);
   font-family: var(--display);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 800;
   font-stretch: 80%;
-  letter-spacing: -0.01em;
+  line-height: 1;
+  letter-spacing: -0.005em;
 }
+.ticker .ticker-lead:focus-visible { outline-color: var(--bone); outline-offset: -4px; }
 
 .ticker-toggle {
   flex: none;
@@ -182,7 +202,8 @@ p { margin: 0; }
   .ticker { position: relative; height: auto; }
   .ticker-window { -webkit-mask-image: none; mask-image: none; }
   .ticker-track { width: auto; justify-content: center; padding: 10px var(--gutter); }
-  .ticker-group { flex-direction: column; gap: 2px; text-align: center; white-space: normal; }
+  .ticker-group { flex: 1 1 auto; flex-direction: column; gap: 6px; min-width: 0; text-align: center; white-space: normal; }
+  .ticker-group li { display: block; padding: 0; white-space: normal; }
   .ticker-group[aria-hidden] { display: none; }
   .ticker-group li::after { display: none; }
   .ticker-toggle { display: none; }
@@ -349,22 +370,6 @@ p { margin: 0; }
   aspect-ratio: 1600 / 867;
 }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; }
-.hero-media::after {
-  /* warm the bottom edge so the embers read as rising off the coals */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(23, 19, 15, 0.55), transparent 45%);
-  pointer-events: none;
-}
-.embers {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
 
 .hero-facts {
   display: grid;
@@ -489,6 +494,7 @@ p { margin: 0; }
   align-items: end;
   margin-bottom: clamp(56px, 8vw, 112px);
 }
+.dish:last-child { margin-bottom: 0; }
 .dish.flip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
 .dish.flip .dish-media { order: 2; }
 
@@ -1036,5 +1042,4 @@ p { margin: 0; }
   .js .year { transform: none; opacity: 1; }
   .js .hero-media,
   .js .reveal { clip-path: none; }
-  .embers { display: none; }
 }
