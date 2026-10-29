@@ -17,6 +17,16 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(start);
   setTimeout(start, 600);
 
+  // ---------- Announcement ticker: pause and play ----------
+  var ticker = document.querySelector(".ticker");
+  if (ticker) {
+    var toggle = ticker.querySelector(".ticker-toggle");
+    toggle.addEventListener("click", function () {
+      var paused = ticker.classList.toggle("paused");
+      toggle.setAttribute("aria-pressed", paused ? "true" : "false");
+    });
+  }
+
   // ---------- Top bar border once scrolled ----------
   var topbar = document.getElementById("topbar");
   var onScroll = function () { topbar.classList.toggle("scrolled", window.scrollY > 8); };
