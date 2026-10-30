@@ -1,0 +1,10 @@
+# Hostinger copies this repository straight into public_html. The source files
+# up here only become a website once they're built, so every request is sent
+# to the built copy of the site in site/ (kept up to date by GitHub Actions).
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /site/404.html
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/site/
+RewriteRule ^(.*)$ site/$1 [L]

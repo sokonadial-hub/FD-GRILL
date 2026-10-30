@@ -31,6 +31,8 @@ npm start        # run the built site as a Node.js app (after npm run build)
 - `public/`: copied to the site as is: photos in `img/` (WebP in several sizes plus a JPEG fallback), self-hosted fonts in `fonts/`, `404.html`, `.htaccess` (Hostinger server settings), `CNAME`, `robots.txt`, `sitemap.xml`
 - `scripts/prerender.mjs`: writes the server-rendered page into `dist/index.html` at build time
 - `server.mjs`: the Node.js server for `npm start`
+- `site/`: the built site, committed by the workflow for Hostinger (don't edit)
+- `.htaccess` (repository root): sends Hostinger visitors to `site/`
 - `src/components/OpeningList.tsx`: the "Save me a seat" sign-up for the 2027 opening (emails the same FormSubmit inbox as the quote form)
 
 ## Writing for FD Grill
@@ -51,18 +53,22 @@ Animations use only transforms, opacity and clip-path, so they stay smooth on ph
 
 ## Publishing (Hostinger)
 
-The site is hosted on Hostinger. A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the site on every pull request, and on every push to `main` it publishes the finished files to the **`hostinger`** branch. That branch holds only built files (never edit it by hand). Hostinger pulls it into `public_html`.
+The site is hosted on Hostinger, which copies this repository into `public_html`. The source files only become a website once they're built, so:
 
-One-time setup in Hostinger's hPanel:
+- On every push to `main`, the GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the site and commits the finished files to **`site/`** on `main`. Never edit `site/` by hand; it's replaced on every build.
+- The **root `.htaccess`** sends every visitor to `site/`, so `fdgrill.com/` shows the built site and the source files aren't reachable from the web.
+- The same built files are also published to the **`hostinger`** branch, for a Hostinger setup that deploys only the site.
 
-1. **Websites → fdgrill.com → Advanced → Git.** Repository `https://github.com/sokonadial-hub/FD-GRILL.git`, branch `hostinger`, install path left empty (so it deploys into `public_html`). `public_html` must be empty first: delete or back up anything in it with the File Manager. If the repository is private, add the SSH key Hostinger shows there to GitHub (repository **Settings → Deploy keys**) and use the `git@github.com:` address instead.
+If Hostinger's Git deployment of `main` has **Auto deployment** on, every merge goes live by itself. If not, click **Deploy** under **Websites → fdgrill.com → Advanced → Git** after merging.
+
+To set Hostinger up from scratch (hPanel):
+
+1. **Websites → fdgrill.com → Advanced → Git.** Repository `https://github.com/sokonadial-hub/FD-GRILL.git`, branch `main` (or `hostinger`), install path left empty (so it deploys into `public_html`). `public_html` must be empty first: delete or back up anything in it with the File Manager. If the repository is private, add the SSH key Hostinger shows there to GitHub (repository **Settings → Deploy keys**) and use the `git@github.com:` address instead.
 2. Click **Deploy** once, then turn on **Auto deployment** and add the webhook URL it gives you to GitHub (repository **Settings → Webhooks → Add webhook**, content type `application/json`, "Just the push event"). After that every merge to `main` goes live within a minute or two.
 3. **Security → SSL:** install the free SSL certificate and turn on **Force HTTPS**.
 4. The domain's DNS must point at Hostinger (Hostinger's own nameservers, or its A record), not at GitHub Pages.
 
 `public/.htaccess` sets the 404 page, compression and caching on Hostinger's server.
-
-Never point Hostinger at `main`: it holds the source code, which a browser shows as a blank page until it's built.
 
 On Hostinger plans that run Node.js apps you can instead deploy `main` as a Node.js app (build command `npm run build`, start command `npm start`), but the `hostinger` branch works on every plan.
 
