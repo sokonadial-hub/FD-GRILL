@@ -1,9 +1,10 @@
 name: Build and deploy
 
 # Builds the React site on every pull request (so a broken build shows up before
-# merging). On every push to main it publishes the finished site to the
-# `hostinger` branch, which Hostinger's Git deployment pulls into public_html.
-# That branch holds only built files: never edit it by hand.
+# merging). On every push to main it refreshes the built copy of the site in
+# site/ on main (the root .htaccess sends every visitor there, so Hostinger can
+# serve main as-is) and publishes the same files to the `hostinger` branch.
+# Neither site/ nor the hostinger branch should be edited by hand.
 on:
   push:
     branches: [main]
@@ -28,6 +29,16 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Update the built copy in site/ on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          rm -rf site && cp -r dist site
+          git add -A site
+          if git diff --cached --quiet; then echo "site/ is already up to date"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Update the built site in site/ [skip ci]"
+          git push origin HEAD:main
       - name: Publish to the hostinger branch
         if: github.event_name != 'pull_request'
         working-directory: dist

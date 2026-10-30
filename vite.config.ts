@@ -11,4 +11,7 @@ export default defineConfig({
   resolve: {
     alias: { "@": path.resolve(import.meta.dirname, "./src") },
   },
+  // site/ holds the committed build; only scan the real entry page
+  optimizeDeps: { entries: ["index.html"] },
+  server: { watch: { ignored: ["**/site/**"] } },
 })
