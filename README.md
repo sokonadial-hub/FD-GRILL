@@ -13,7 +13,12 @@ npm install
 npm run dev      # local preview at http://localhost:5173 with live reload
 npm run build    # type-check, build and pre-render into dist/
 npm run preview  # serve the built site from dist/
+npm start        # run the built site as a Node.js app (after npm run build)
 ```
+
+### Running it as a Node.js app
+
+`server.mjs` serves the built site with Node's built-in `http` module: no extra packages, compressed text, long-term caching for fingerprinted assets, and the branded 404 page. It listens on the `PORT` environment variable (default 3000), so it works on Node.js hosting such as Hostinger: set the build command to `npm run build` and the start command to `npm start` (entry file `server.mjs`). GitHub Pages doesn't need it; it serves `dist/` directly.
 
 ## Files
 
@@ -25,6 +30,8 @@ npm run preview  # serve the built site from dist/
 - `src/index.css`: Tailwind setup, brand colors and fonts as theme tokens, breakpoints, and the few animations that need plain CSS (ticker, cloth stripe, photo reveals)
 - `public/`: copied to the site as is: photos in `img/` (WebP in several sizes plus a JPEG fallback), self-hosted fonts in `fonts/`, `404.html`, `CNAME`, `robots.txt`, `sitemap.xml`
 - `scripts/prerender.mjs`: writes the server-rendered page into `dist/index.html` at build time
+- `server.mjs`: the Node.js server for `npm start`
+- `src/components/OpeningList.tsx`: the "Save me a seat" sign-up for the 2027 opening (emails the same FormSubmit inbox as the quote form)
 
 ## Writing for FD Grill
 

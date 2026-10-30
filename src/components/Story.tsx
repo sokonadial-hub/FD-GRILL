@@ -35,6 +35,9 @@ export function Story() {
           kitchen at our Philadelphia location and opening it for sit-down dining in 2027. Our catering carries on as
           always.
         </p>
+        <p className="mt-4 max-w-[52ch] text-[1.1rem] font-semibold text-charcoal">
+          These are our family's recipes, cooked the way we cook them at home. Nothing toned down, nothing dressed up.
+        </p>
       </div>
     </section>
   )
