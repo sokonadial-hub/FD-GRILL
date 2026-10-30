@@ -48,4 +48,4 @@ A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the site on ev
 
 ## Photo credits
 
-`catering-serving-*` (Adobe Stock #454202736) and `catering-grill-*` (Adobe Stock #1223311706) are licensed from Adobe Stock under FD Grill's Adobe account (standard license). All other food photos are FD Grill's own.
+All photos were supplied by FD Grill. The two grill photos in the catering section (`grill-basting-*`, `grill-overhead-*`) are the outdoor barbecue shots from the first version of the site; if they came from elsewhere online, confirm they're cleared for use or replace them. The licensed Adobe Stock images (#454202736, #1223311706) that stood in for them are in the repository history (commit `acf87cf`) if needed again.
