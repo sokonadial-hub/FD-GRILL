@@ -18,7 +18,7 @@ npm start        # run the built site as a Node.js app (after npm run build)
 
 ### Running it as a Node.js app
 
-`server.mjs` serves the built site with Node's built-in `http` module: no extra packages, compressed text, long-term caching for fingerprinted assets, and the branded 404 page. It listens on the `PORT` environment variable (default 3000), so it works on Node.js hosting such as Hostinger: set the build command to `npm run build` and the start command to `npm start` (entry file `server.mjs`). GitHub Pages doesn't need it; it serves `dist/` directly.
+`server.mjs` serves the built site with Node's built-in `http` module: no extra packages, compressed text, long-term caching for fingerprinted assets, and the branded 404 page. It listens on the `PORT` environment variable (default 3000), so it works on Node.js hosting such as Hostinger: set the build command to `npm run build` and the start command to `npm start` (entry file `server.mjs`). The standard Hostinger setup (below) doesn't need it; it serves the built files directly.
 
 ## Files
 
@@ -28,14 +28,14 @@ npm start        # run the built site as a Node.js app (after npm run build)
 - `src/components/ui/`: shadcn/ui components (`button`, `input`, `textarea`, `native-select`, `label`, `toggle-group`, `accordion`), adapted to the FD Grill palette. `components.json` holds the shadcn settings
 - `src/data/`: the content that changes most: `menu.ts` (the full menu), `matches.ts` (the "You already know this food" pairings) and `site.ts` (phone, email, address, dishes on the quote form)
 - `src/index.css`: Tailwind setup, brand colors and fonts as theme tokens, breakpoints, and the few animations that need plain CSS (ticker, cloth stripe, photo reveals)
-- `public/`: copied to the site as is: photos in `img/` (WebP in several sizes plus a JPEG fallback), self-hosted fonts in `fonts/`, `404.html`, `CNAME`, `robots.txt`, `sitemap.xml`
+- `public/`: copied to the site as is: photos in `img/` (WebP in several sizes plus a JPEG fallback), self-hosted fonts in `fonts/`, `404.html`, `.htaccess` (Hostinger server settings), `CNAME`, `robots.txt`, `sitemap.xml`
 - `scripts/prerender.mjs`: writes the server-rendered page into `dist/index.html` at build time
 - `server.mjs`: the Node.js server for `npm start`
 - `src/components/OpeningList.tsx`: the "Save me a seat" sign-up for the 2027 opening (emails the same FormSubmit inbox as the quote form)
 
 ## Writing for FD Grill
 
-New copy (site, menus, social, email) should follow [BRAND-VOICE.md](BRAND-VOICE.md): warm, rooted, plain-spoken, quietly confident.
+New copy (site, menus, social, email) should follow [BRAND-VOICE.md](BRAND-VOICE.md): joyful and inviting, warm, fire-forward, authentic, plain-spoken.
 
 ## Common edits
 
@@ -49,9 +49,22 @@ New copy (site, menus, social, email) should follow [BRAND-VOICE.md](BRAND-VOICE
 
 Animations use only transforms, opacity and clip-path, so they stay smooth on phones. Everything is switched off for visitors whose device is set to reduce motion. The ticker has a pause button and stops on hover and keyboard focus.
 
-## Publishing
+## Publishing (Hostinger)
 
-A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the site on every pull request and publishes it to GitHub Pages on every push to `main`. In the repository's **Settings → Pages**, **Source** must be set to **GitHub Actions**. The custom domain is https://fdgrill.com/ (`public/CNAME`); DNS for fdgrill.com points at GitHub Pages (A records for the apex, a CNAME for `www`).
+The site is hosted on Hostinger. A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the site on every pull request, and on every push to `main` it publishes the finished files to the **`hostinger`** branch. That branch holds only built files (never edit it by hand). Hostinger pulls it into `public_html`.
+
+One-time setup in Hostinger's hPanel:
+
+1. **Websites → fdgrill.com → Advanced → Git.** Repository `https://github.com/sokonadial-hub/FD-GRILL.git`, branch `hostinger`, install path left empty (so it deploys into `public_html`). `public_html` must be empty first: delete or back up anything in it with the File Manager. If the repository is private, add the SSH key Hostinger shows there to GitHub (repository **Settings → Deploy keys**) and use the `git@github.com:` address instead.
+2. Click **Deploy** once, then turn on **Auto deployment** and add the webhook URL it gives you to GitHub (repository **Settings → Webhooks → Add webhook**, content type `application/json`, "Just the push event"). After that every merge to `main` goes live within a minute or two.
+3. **Security → SSL:** install the free SSL certificate and turn on **Force HTTPS**.
+4. The domain's DNS must point at Hostinger (Hostinger's own nameservers, or its A record), not at GitHub Pages.
+
+`public/.htaccess` sets the 404 page, compression and caching on Hostinger's server.
+
+Never point Hostinger at `main`: it holds the source code, which a browser shows as a blank page until it's built.
+
+On Hostinger plans that run Node.js apps you can instead deploy `main` as a Node.js app (build command `npm run build`, start command `npm start`), but the `hostinger` branch works on every plan.
 
 ## Photo credits
 
