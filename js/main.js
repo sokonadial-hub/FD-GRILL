@@ -250,6 +250,26 @@
     });
   }
 
+  // ---------- Start here: keep the chosen match in view on small screens ----------
+  document.querySelectorAll('input[name="love"]').forEach(function (input) {
+    input.addEventListener("change", function () {
+      var card = document.querySelector('.match[data-love="' + input.value + '"]');
+      if (!card) return;
+      var r = card.getBoundingClientRect();
+      if (r.top > window.innerHeight - 160) {
+        card.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
+      }
+    });
+  });
+
+  // ---------- "Add to my quote" from the start-here matches ----------
+  document.querySelectorAll("[data-food]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      var box = document.querySelector('#quote-form input[name="food"][value="' + link.getAttribute("data-food") + '"]');
+      if (box) box.checked = true;
+    });
+  });
+
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();

@@ -75,6 +75,7 @@
       <span>FD Grill</span>
     </a>
     <nav class="nav" aria-label="Main">
+      <a href="#start">Start here</a>
       <a href="#story">Our story</a>
       <a href="#catering">Catering</a>
       <a href="#menu">Menu</a>
@@ -94,7 +95,7 @@
         <p class="lede">Live fire, charcoal smoke and family recipes. For more than 20 years we've grilled kabobs, lamb and steak over the coals and simmered Malian stews from whole, natural ingredients. Now we cater them for your celebrations across Philadelphia.</p>
         <div class="actions">
           <a class="btn btn-ember" href="#quote">Get a catering quote</a>
-          <a class="btn btn-line" href="#menu">See the menu</a>
+          <a class="btn btn-line" href="#start">Find your first dish</a>
         </div>
       </div>
 
@@ -115,6 +116,122 @@
     <div class="cloth" aria-hidden="true">
       <span></span><span></span><span></span><span></span><span></span>
     </div>
+
+    <!-- Start here: from food you love to your first FD dish -->
+    <section class="start" id="start" aria-labelledby="start-title">
+      <div class="start-inner">
+        <header class="start-intro">
+          <h2 id="start-title">You already know this food.</h2>
+          <p>Rice, peanuts, okra, black-eyed peas, greens cooked low and slow: so much of the food you grew up on has roots in West Africa. Tell us what you love and we'll show you where to start.</p>
+        </header>
+
+        <fieldset class="loves">
+          <legend>I love…</legend>
+          <label class="love"><input type="radio" name="love" value="cookout" checked><span>A good cookout</span></label>
+          <label class="love"><input type="radio" name="love" value="greens"><span>Collard greens</span></label>
+          <label class="love"><input type="radio" name="love" value="eggrolls"><span>Egg rolls</span></label>
+          <label class="love"><input type="radio" name="love" value="patties"><span>Beef patties</span></label>
+          <label class="love"><input type="radio" name="love" value="redrice"><span>Red rice or jambalaya</span></label>
+          <label class="love"><input type="radio" name="love" value="peanut"><span>Peanut butter</span></label>
+          <label class="love"><input type="radio" name="love" value="reddrink"><span>Red drink</span></label>
+        </fieldset>
+
+        <div class="matches" aria-live="polite">
+        <article class="match" data-love="cookout">
+          <figure class="match-media">
+            <picture>
+              <source type="image/webp" srcset="img/chicken-kabobs-640.webp 640w, img/chicken-kabobs-960.webp 960w" sizes="(max-width: 860px) 92vw, 46vw">
+              <img src="img/chicken-kabobs-960.jpg" alt="Charcoal-grilled chicken kabobs with peppers and onions, fries and fresh tomato" width="960" height="683" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="match-copy">
+            <p class="match-ask">Love a good cookout?</p>
+            <h3>Start with kabobs.</h3>
+            <p>Beef, chicken or mushroom, marinated in house spices and charred over live charcoal. The smoke and char you know, with new spices.</p>
+            <a class="btn btn-dark" href="#quote" data-food="Kabobs">Add kabobs to my quote</a>
+          </div>
+        </article>
+        <article class="match" data-love="greens">
+          <figure class="match-media">
+            <picture>
+              <source type="image/webp" srcset="img/stew-640.webp 640w, img/stew-960.webp 960w, img/stew-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 46vw">
+              <img src="img/stew-1400.jpg" alt="Leaf stew in a glass bowl beside a mound of white rice" width="1400" height="634" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="match-copy">
+            <p class="match-ask">Love collard greens?</p>
+            <h3>Try saka-saka.</h3>
+            <p>Potato greens stewed low with garlic, onions, herbs, beef and palm oil, served with white rice or fonio. Cassava leaf and fakoye are close cousins.</p>
+            <a class="btn btn-dark" href="#quote" data-food="Stews">Add greens to my quote</a>
+          </div>
+        </article>
+        <article class="match" data-love="eggrolls">
+          <figure class="match-media">
+            <picture>
+              <source type="image/webp" srcset="img/nem-640.webp 640w, img/nem-960.webp 960w, img/nem-1150.webp 1150w" sizes="(max-width: 860px) 92vw, 46vw">
+              <img src="img/nem-1150.jpg" alt="Crispy nem spring rolls, one cut open to show seasoned beef" width="1150" height="854" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="match-copy">
+            <p class="match-ask">Love egg rolls?</p>
+            <h3>Try nem.</h3>
+            <p>Crispy spring rolls with glass noodles, mushrooms and beef or chicken, with sweet chili sauce and house salad.</p>
+            <a class="btn btn-dark" href="#quote" data-food="Nem">Add nem to my quote</a>
+          </div>
+        </article>
+        <article class="match" data-love="patties">
+          <figure class="match-media">
+            <picture>
+              <source type="image/webp" srcset="img/patte-beef-640.webp 640w, img/patte-beef-1000.webp 1000w" sizes="(max-width: 860px) 92vw, 46vw">
+              <img src="img/patte-beef-1000.jpg" alt="Golden patté filled with spiced beef and boiled egg" width="1000" height="826" loading="lazy" decoding="async">
+            </picture>
+          </figure>
+          <div class="match-copy">
+            <p class="match-ask">Love a beef patty?</p>
+            <h3>Try patté.</h3>
+            <p>Flaky pastry filled with spiced ground beef or chicken, boiled egg and herbs. Easy to pass around at any party.</p>
+            <a class="btn btn-dark" href="#quote" data-food="Patté">Add patté to my quote</a>
+          </div>
+        </article>
+        <article class="match" data-love="redrice">
+          <div class="match-art tone-ember" aria-hidden="true">
+            <span class="match-art-name">Zaamè</span>
+            <span class="match-art-gloss">Malian jollof rice</span>
+          </div>
+          <div class="match-copy">
+            <p class="match-ask">Love red rice or jambalaya?</p>
+            <h3>Try zaamè.</h3>
+            <p>Malian jollof: short-grain rice simmered in a spiced tomato and herb sauce, served with your choice of fish or meat.</p>
+            <a class="btn btn-dark" href="#quote" data-food="Platters">Add zaamè to my quote</a>
+          </div>
+        </article>
+        <article class="match" data-love="peanut">
+          <div class="match-art tone-ochre" aria-hidden="true">
+            <span class="match-art-name">Maafe</span>
+            <span class="match-art-gloss">Peanut stew</span>
+          </div>
+          <div class="match-copy">
+            <p class="match-ask">Love peanut butter?</p>
+            <h3>Try maafe.</h3>
+            <p>Groundnut stew with beef, slow-cooked in a peanut-tomato sauce and served with white rice or fonio. Rich, savory and nothing like a sandwich.</p>
+            <a class="btn btn-dark" href="#quote" data-food="Stews">Add maafe to my quote</a>
+          </div>
+        </article>
+        <article class="match" data-love="reddrink">
+          <div class="match-art tone-red" aria-hidden="true">
+            <span class="match-art-name">Bissap</span>
+            <span class="match-art-gloss">Hibiscus juice</span>
+          </div>
+          <div class="match-copy">
+            <p class="match-ask">Love red drink?</p>
+            <h3>Try bissap.</h3>
+            <p>Hibiscus juice: deep red, sweet and tart, and cold. Add ginger juice if you like a kick.</p>
+            <a class="btn btn-dark" href="#quote" data-food="Juices">Add bissap to my quote</a>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
 
     <!-- Story -->
     <section class="story" id="story" aria-labelledby="story-title">
