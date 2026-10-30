@@ -4,7 +4,14 @@ import { SectionHead } from "@/components/SectionHead"
 import { EMAIL, PHONE, PHONE_DISPLAY } from "@/data/site"
 import { useReveal } from "@/hooks/use-reveal"
 
-const OCCASIONS = ["Birthdays and family parties", "Weddings and celebrations", "Office lunches and meetings", "Church and community events"]
+const OCCASIONS = [
+  "Birthdays and family parties",
+  "Family reunions and cookouts",
+  "Weddings and celebrations",
+  "Graduations and showers",
+  "Office lunches and meetings",
+  "Church and community events",
+]
 
 const STEPS = [
   ["Tell us about your event.", "Date, number of guests, where it is and what you'd like to serve."],
@@ -23,7 +30,8 @@ export function Catering({ foods, onFoodsChange }: { foods: string[]; onFoodsCha
       <div className="[grid-area:intro]">
         <SectionHead id="catering-title" title="Let us cook for your people" stacked className="mb-8">
           Feed your guests the way we feed family: kabobs and lamb straight from the coals, flaky patté, slow-simmered
-          peanut and leaf stews, fresh bissap and ginger juice. Tell us about your event and we'll build a menu around it.
+          peanut and leaf stews, fresh bissap and ginger juice. Tell us about your event, big or small, and we'll build a
+          menu around it.
         </SectionHead>
         <ul aria-label="Events we cater" className="m-0 grid list-none grid-cols-1 gap-x-8 gap-y-2.5 p-0 sm:grid-cols-[repeat(2,minmax(0,max-content))]">
           {OCCASIONS.map((o) => (
@@ -38,23 +46,23 @@ export function Catering({ foods, onFoodsChange }: { foods: string[]; onFoodsCha
       <div ref={mediaRef} className="relative pb-[22%] [grid-area:media]">
         <figure className="reveal m-0 ml-auto w-[88%] overflow-hidden rounded-md">
           <Photo
-            name="catering-serving"
-            widths={[640, 1200]}
+            name="grill-basting"
+            widths={[659]}
             sizes="(max-width: 860px) 100vw, 44vw"
-            alt="Leaf stew spooned from a catering tray onto a guest's plate of rice and grilled chicken"
-            width={1200}
-            height={900}
+            alt="Cooks basting and turning meat on a large outdoor grill"
+            width={659}
+            height={465}
             className="w-full"
           />
         </figure>
         <figure className="reveal absolute bottom-0 left-0 m-0 w-[54%] overflow-hidden rounded-[10px] border-[6px] border-white">
           <Photo
-            name="catering-grill"
-            widths={[640, 1200]}
+            name="grill-overhead"
+            widths={[700]}
             sizes="(max-width: 860px) 54vw, 26vw"
-            alt="A grandfather grilling at an outdoor family gathering while the family sets the table behind him"
-            width={1200}
-            height={800}
+            alt="Overhead view of a charcoal grill loaded with chicken skewers and sausages"
+            width={700}
+            height={420}
             className="w-full"
           />
         </figure>

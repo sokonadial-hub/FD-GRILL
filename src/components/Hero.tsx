@@ -24,8 +24,8 @@ export function Hero() {
         </h1>
         <p className="hero-fade mt-[26px] mb-[34px] max-w-[40ch] text-[1.15rem] text-bone-soft [.loaded_&]:delay-[350ms]">
           Live fire, charcoal smoke and family recipes. For more than 20 years we've grilled kabobs, lamb and steak over
-          the coals and simmered Malian stews from whole, natural ingredients. Now we cater them for your celebrations
-          across Philadelphia.
+          the coals and simmered Malian stews from whole, natural ingredients. Now we cater them across Philadelphia, for
+          events big and small.
         </p>
         <div className="hero-fade flex flex-wrap gap-3 [.loaded_&]:delay-[450ms]">
           <Button asChild>

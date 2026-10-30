@@ -188,6 +188,7 @@ export function QuoteForm({ foods, onFoodsChange }: { foods: string[]; onFoodsCh
           <NativeSelect id="q-type" name="type" defaultValue="">
             <option value="">Choose one</option>
             <option>Birthday or family party</option>
+            <option>Family reunion or cookout</option>
             <option>Wedding or celebration</option>
             <option>Office lunch or meeting</option>
             <option>Church or community event</option>
