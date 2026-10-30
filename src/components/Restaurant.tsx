@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { OpeningList } from "@/components/OpeningList"
 import { PHONE, PHONE_DISPLAY } from "@/data/site"
 import { useReveal } from "@/hooks/use-reveal"
 
@@ -9,7 +10,7 @@ export function Restaurant() {
       ref={ref}
       id="restaurant"
       aria-labelledby="restaurant-title"
-      className="relative grid grid-cols-1 items-center gap-[clamp(24px,5vw,80px)] overflow-hidden bg-charcoal px-[max(var(--gutter),calc((100%-1240px)/2+var(--gutter)))] py-[clamp(72px,10vw,140px)] text-bone md:grid-cols-2"
+      className="relative grid grid-cols-1 items-center md:items-start gap-[clamp(24px,5vw,80px)] overflow-hidden bg-charcoal px-[max(var(--gutter),calc((100%-1240px)/2+var(--gutter)))] py-[clamp(72px,10vw,140px)] text-bone md:grid-cols-2"
     >
       <p
         aria-hidden="true"
@@ -35,6 +36,7 @@ export function Restaurant() {
             <a href={`tel:${PHONE}`}>Call {PHONE_DISPLAY}</a>
           </Button>
         </div>
+        <OpeningList />
       </div>
     </section>
   )

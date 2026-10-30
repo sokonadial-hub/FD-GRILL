@@ -31,8 +31,9 @@ export function StartHere({ onAddFood }: { onAddFood: (food: Food) => void }) {
             You already know this food.
           </h2>
           <p className="mt-[22px] max-w-[44ch] text-[1.15rem] text-muted-foreground">
-            Rice, peanuts, okra, black-eyed peas, greens cooked low and slow: so much of the food you grew up on has
-            roots in West Africa. Tell us what you love and we'll show you where to start.
+            Meat charred over the coals, rice cooked red with tomato, greens simmered low and slow, flaky hand pies:
+            if you've been to an American cookout, you already know these flavors. Pick what you love and we'll show
+            you where to start.
           </p>
         </header>
 
