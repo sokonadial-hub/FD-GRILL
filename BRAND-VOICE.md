@@ -61,6 +61,16 @@ In this order:
 4. **More than 20 years of experience.** Proof without bragging.
 5. **A new chapter.** We already have our Philadelphia location; we're adding a full kitchen and opening it for sit-down dining in 2027. Catering carries on as always. Tell it as a success story: we're growing, not starting out. Never say "20 years in the making", and never suggest we don't have a place yet.
 
+## Start from what people already love
+
+Many guests, especially Black Americans who grew up on Southern and soul food, haven't had West African food yet and may expect it to be unfamiliar. It isn't: rice dishes, peanuts, okra, black-eyed peas and greens cooked low and slow are shared roots. Lead with that connection, then introduce the dish.
+
+- **Pattern:** "Love [familiar food]? Try [our dish]." Then describe the dish plainly.
+- **Pairings we use:** cookout → kabobs, collard greens → saka-saka, egg rolls → nem, beef patties → patté, red rice or jambalaya → zaamè, peanut butter → maafe, red drink → bissap.
+- **Tone:** warm and a little playful, never a lecture. "You already know this food."
+- **Never** talk down to the guest or to the food. No "don't be scared", "give it a chance", "exotic" or "acquired taste".
+- Comparisons describe taste and texture; don't claim a dish *is* the familiar one.
+
 ## Tone by situation
 
 The voice stays the same; the tone shifts.

@@ -635,6 +635,131 @@ p { margin: 0; }
 
 .tax { margin-top: 8px; font-size: 0.95rem; color: var(--ink-soft); }
 
+/* ---------- Start here: from food you love to your first dish ---------- */
+
+.start { background: var(--ochre-pale); color: var(--ink); }
+.start-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  grid-template-areas: "intro match" "loves match";
+  grid-template-rows: auto 1fr;
+  align-content: start;
+  gap: 28px clamp(32px, 6vw, 96px);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(64px, 9vw, 120px) var(--gutter);
+}
+.start-intro { grid-area: intro; }
+.start h2 {
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: -0.025em;
+  max-width: 13ch;
+}
+.start-intro p { margin-top: 22px; max-width: 44ch; font-size: 1.15rem; color: var(--ink-soft); }
+
+.loves {
+  grid-area: loves;
+  align-self: start;
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.loves legend {
+  float: left;
+  width: 100%;
+  margin-bottom: 4px;
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-stretch: 85%;
+}
+.love { position: relative; cursor: pointer; }
+.love input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.love span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s var(--ease-out);
+}
+.love:hover span { background: #ecdfbd; }
+.love input:checked + span { background: var(--ink); color: var(--bone); transform: rotate(-2deg); }
+.love input:focus-visible + span { outline: 3px solid var(--ember-deep); outline-offset: 3px; }
+
+.matches { grid-area: match; align-self: center; }
+.match {
+  display: none;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: 0 1px 0 var(--rule);
+}
+/* Show the dish that matches the chosen food */
+.start:has(input[value="cookout"]:checked) .match[data-love="cookout"],
+.start:has(input[value="greens"]:checked) .match[data-love="greens"],
+.start:has(input[value="eggrolls"]:checked) .match[data-love="eggrolls"],
+.start:has(input[value="patties"]:checked) .match[data-love="patties"],
+.start:has(input[value="redrice"]:checked) .match[data-love="redrice"],
+.start:has(input[value="peanut"]:checked) .match[data-love="peanut"],
+.start:has(input[value="reddrink"]:checked) .match[data-love="reddrink"] {
+  display: block;
+  animation: match-in 0.45s var(--ease-out);
+}
+/* Browsers without :has() list every pairing instead */
+@supports not selector(:has(*)) {
+  .match { display: block; margin-bottom: 20px; }
+}
+@keyframes match-in {
+  from { opacity: 0; transform: translateY(14px) rotate(-1deg); }
+}
+
+.match-media { margin: 0; aspect-ratio: 16 / 10; }
+.match-media img { width: 100%; height: 100%; object-fit: cover; }
+.match-art {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 16 / 10;
+  padding: clamp(20px, 3vw, 32px);
+  color: var(--bone);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0 2px, transparent 2px 9px);
+}
+.match-art.tone-ember { background-color: var(--ember-deep); }
+.match-art.tone-ochre { background-color: #7a5a12; }
+.match-art.tone-red { background-color: #8c1c2e; }
+.match-art-name {
+  font-family: var(--display);
+  font-size: clamp(4rem, 9vw, 7rem);
+  font-weight: 800;
+  font-stretch: 75%;
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+}
+.match-art-gloss { margin-top: 10px; font-size: 1.05rem; font-weight: 600; }
+
+.match-copy { padding: clamp(22px, 3vw, 32px); }
+.match-ask { font-weight: 600; color: var(--ember-deep); }
+.match h3 {
+  margin-top: 4px;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  font-stretch: 78%;
+  letter-spacing: -0.02em;
+}
+.match-copy > p:not(.match-ask) { margin: 12px 0 22px; max-width: 46ch; color: var(--ink-soft); }
+.btn-dark { background: var(--ink); color: var(--bone); }
+.btn-dark:hover { background: #000; }
+
 /* ---------- Story ---------- */
 
 .story {
@@ -974,6 +1099,12 @@ p { margin: 0; }
   .dish:not(.feature) .dish-copy { padding: 0; }
   .dish:not(.feature) h3 { font-size: 1.9rem; }
   .dish:not(.feature) .dish-copy p:last-child { margin-top: 6px; font-size: 0.95rem; line-height: 1.5; }
+
+  .start-inner { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "loves" "match"; grid-template-rows: none; }
+  .love span { min-height: 44px; padding: 0 15px; font-size: 0.98rem; }
+  .match-media,
+  .match-art { aspect-ratio: 2 / 1; }
+  .match-art-name { font-size: 3.6rem; }
 
   .catering {
     grid-template-columns: 1fr;
