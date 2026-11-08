@@ -4,10 +4,10 @@ How FD Grill sounds, on the website, menus, flyers, social posts, emails and tex
 
 **Positioning:** Home of the African grill.
 **Tagline:** From our family's table to yours.
-**The bridge:** You already know this food.
+**The bridge:** Rooted in West Africa.
 **The promise:** The real thing, and everyone's invited.
 
-The positioning says what we are, the tagline says how it feels, the bridge welcomes people who haven't tried West African food yet, and the promise says what never changes: we cook it for real, and we cook it for everyone. Together: "Home of the African grill. You already know this food. From our family's table to yours."
+The positioning says what we are, the tagline says how it feels, the bridge shows newcomers that so much of what America loves to eat began in West Africa and traveled with its diaspora, and the promise says what never changes: we cook it for real, and we cook it for everyone. Together: "Home of the African grill. Rooted in West Africa. From our family's table to yours."
 
 ## Who we are, as a person
 
@@ -63,19 +63,21 @@ We write for all of them as fellow food people. We never call anyone "foodies" i
 In this order:
 
 1. **The African grill.** Live fire, charcoal and smoke, with West African spice. This is what we lead with.
-2. **You already know this food.** Start from what people love, then introduce the dish (see below).
+2. **Rooted in West Africa.** Start from a dish people love, show where it comes from, then introduce ours (see below).
 3. **The real thing.** Family recipes and more than 20 years of cooking them, from whole ingredients: real cuts, fresh produce, house spices, pastry folded by hand. Nothing toned down.
 4. **Catering, big and small.** From a family dinner to a full reunion. We price each event for its guest count.
 5. **A new chapter.** We already have our home at 6732 Elmwood Ave; it's being renovated into a full sit-down restaurant, opening 2027. Catering carries on as always. Tell it as a success story: we're growing, not starting out. Never say "20 years in the making", and never suggest we don't have a place yet. Invite people in: "Save me a seat."
 
-## Start from what people already love
+## Show where the food comes from
 
-Lead with the connection, then introduce the dish.
+Start from a dish people love, tell its West African roots or the route it traveled, then introduce ours. The point is pride, not translation: these flavors began here, and the diaspora carried them across the Atlantic.
 
-- **Pattern:** "Love [familiar food]? Try [our dish]." Then describe the dish plainly.
-- **Pairings we use:** backyard cookout → kabobs, collard greens → saka-saka, egg rolls → nem, empanadas or beef patties → patté, jambalaya or Spanish rice → zaamè, peanut butter → maafe, agua de jamaica or red drink → bissap (the same hibiscus flower).
-- **Reach wide:** pick familiar foods from across American kitchens (Southern, soul, Cajun, Caribbean, Latin American, Chinese American takeout) so everyone finds a way in.
-- **Tone:** warm and a little playful, never a lecture.
+- **Pattern:** "Love [favorite]? Meet its ancestor: [our dish]." Then one or two sentences on where it comes from, then the dish itself.
+- **Roots we tell:** jambalaya and Lowcountry red rice → zaamè (jollof began in Senegambia; enslaved rice farmers brought it to the Carolinas) · collard greens → saka-saka (West African leaf stews and pot likker) · Southern peanut soup → maafe (peanuts came to the South with enslaved West Africans; "goober" is from the Kikongo nguba) · red drink, sorrel, agua de jamaica → bissap (hibiscus is African) · barbecue → kabobs (enslaved Africans worked the pits; West Africa grills over coals to this day).
+- **Routes we tell:** some dishes came *to* West Africa and were made its own: patté (the Atlantic hand pie, cousin of the beef patty) and nem (brought to Senegal by Vietnamese wives of Senegalese soldiers in the 1950s). Say so plainly; our food has always traveled.
+- **Get the history right.** Only claim a root that food historians agree on. When a dish has several parents (jambalaya also owes a lot to Spanish and French cooking), say "cousin", not "copy".
+- **Reach wide:** pick favorites from across American kitchens (Southern, soul, Cajun, Caribbean, Latin American) so everyone finds their own family's food in the story.
+- **Tone:** proud and warm, never a lecture. One or two sentences of history, then the food.
 - **Never** talk down to the guest or to the food. No "don't be scared", "be brave", "give it a chance", "it's not weird", "exotic" or "acquired taste".
 - Comparisons describe taste and texture; don't claim a dish *is* the familiar one.
 
@@ -87,7 +89,7 @@ The voice stays the same; the tone shifts.
 |---|---|---|
 | Website, menus | Warm and specific | "Easy to pass around at parties and gatherings." |
 | Announcements, ticker | Joyful, short, one idea | "Now catering events, big and small." |
-| First-timers | Inviting, familiar first | "Love collard greens? Try saka-saka." |
+| First-timers | Proud, roots first | "Love collard greens? Meet their roots: saka-saka." |
 | Booking and forms | Clear, helpful, brief | "Add roughly how many people you're feeding." |
 | Confirmation | Grateful | "Thank you for thinking of us. We'll be in touch soon to plan your menu." |
 | Something went wrong | Calm, blame-free, gives a next step | "We couldn't send that just now. Your details are below." |
@@ -98,13 +100,13 @@ The voice stays the same; the tone shifts.
 
 Ready-to-use lines. Each is true as written; check any new line against the rules above.
 
-**Headlines:** Home of the African grill. · You already know this food. · The real thing, and everyone's invited. · Now catering events, big and small. · Let us cook for your people. · Coals are lit. Bring your people. · Save me a seat.
+**Headlines:** Home of the African grill. · Rooted in West Africa. · The real thing, and everyone's invited. · Now catering events, big and small. · Let us cook for your people. · Coals are lit. Bring your people. · Save me a seat.
 
 **Social captions:**
 - "Love a good cookout? Start with kabobs: marinated in house spices, charred over live charcoal."
-- "Collard greens fans, meet saka-saka. Potato greens stewed low with garlic, onions and herbs."
+- "Collard greens have West African roots. Meet saka-saka: potato greens stewed low with garlic, onions and herbs."
 - "Booking reunions, birthdays and office lunches now. Call or text (610) 256-9268."
-- "Love agua de jamaica or red drink? Meet bissap: the same hibiscus flower, deep red, sweet and tart."
+- "Red drink, sorrel, agua de jamaica: hibiscus is African. Meet the original, bissap."
 - "Empanadas, beef patties, patté: every kitchen has its hand pie. Ours is flaky pastry with spiced beef and boiled egg."
 - "Our dining room opens in 2027. Want first word? Save your seat at fdgrill.com."
 
@@ -140,7 +142,7 @@ Ready-to-use lines. Each is true as written; check any new line against the rule
 | catering, your event | services, solutions | We cook for people, not "clients" |
 | quote | pricing, packages | We price each event for its guest count |
 | family-run, our family | family-owned and operated | Simpler |
-| familiar, you already know | strange, weird, brave, adventurous | Nothing about our food needs courage |
+| rooted in, comes from, cousin of | strange, weird, brave, adventurous | Nothing about our food needs courage |
 | patté, Zaamè, Dégué | patty, Zaame, Degue | Keep the accents |
 
 ## Dish names

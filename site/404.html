@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | FD Grill</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#17130f">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <style>
+    @font-face {
+      font-family: "Bricolage Grotesque";
+      src: url("/fonts/bricolage-grotesque-latin.woff2") format("woff2");
+      font-weight: 500 800;
+      font-stretch: 75% 100%;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Figtree";
+      src: url("/fonts/figtree-latin.woff2") format("woff2");
+      font-weight: 300 900;
+      font-display: swap;
+    }
+    :root { --charcoal: #17130f; --bone: #f4eee3; --bone-soft: #c2b7a5; --ember: #e8782a; --ochre: #b0841f; --indigo: #24348c; }
+    * { box-sizing: border-box; }
+    body {
+      display: grid;
+      min-height: 100vh;
+      min-height: 100dvh;
+      margin: 0;
+      place-items: center;
+      padding: 24px 16px;
+      background: var(--charcoal);
+      color: var(--bone);
+      font: 1.0625rem/1.55 "Figtree", system-ui, sans-serif;
+    }
+    main { max-width: 34rem; }
+    h1 {
+      margin: 0 0 16px;
+      font: 800 clamp(2.8rem, 10vw, 5rem)/0.92 "Bricolage Grotesque", "Arial Narrow", sans-serif;
+      font-stretch: 75%;
+      letter-spacing: -0.02em;
+    }
+    p { margin: 0 0 28px; color: var(--bone-soft); }
+    .cloth { height: 10px; margin-bottom: 28px; background: linear-gradient(var(--ochre) 0 30%, #fbf6ea 30% 40%, var(--indigo) 40% 70%, #fbf6ea 70% 80%, var(--ochre) 80%); border-radius: 2px; }
+    a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: var(--ember);
+      color: var(--charcoal);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    a:focus-visible { outline: 3px solid var(--bone); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="cloth" aria-hidden="true"></div>
+    <h1>This page isn't on the menu.</h1>
+    <p>The link may be old or mistyped. Everything we serve, and how to book us for your event, is on the home page.</p>
+    <a href="/">Back to FD Grill</a>
+  </main>
+</body>
+</html>
