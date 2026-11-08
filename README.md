@@ -26,7 +26,7 @@ npm start        # run the built site as a Node.js app (after npm run build)
 - `src/App.tsx`: the page, section by section
 - `src/components/`: one file per section (`Ticker`, `Header`, `Hero`, `StartHere`, `Story`, `Signatures`, `Catering`, `QuoteForm`, `Menu`, `Restaurant`, `Footer`, `Dock`)
 - `src/components/ui/`: shadcn/ui components (`button`, `input`, `textarea`, `native-select`, `label`, `toggle-group`, `accordion`), adapted to the FD Grill palette. `components.json` holds the shadcn settings
-- `src/data/`: the content that changes most: `menu.ts` (the full menu), `matches.ts` (the "You already know this food" pairings) and `site.ts` (phone, email, address, dishes on the quote form)
+- `src/data/`: the content that changes most: `menu.ts` (the full menu), `matches.ts` (the "Rooted in West Africa" pairings and their history) and `site.ts` (phone, email, address, dishes on the quote form)
 - `src/index.css`: Tailwind setup, brand colors and fonts as theme tokens, breakpoints, and the few animations that need plain CSS (ticker, cloth stripe, photo reveals)
 - `public/`: copied to the site as is: photos in `img/` (WebP in several sizes plus a JPEG fallback), self-hosted fonts in `fonts/`, `404.html`, `.htaccess` (Hostinger server settings), `CNAME`, `robots.txt`, `sitemap.xml`
 - `scripts/prerender.mjs`: writes the server-rendered page into `dist/index.html` at build time
@@ -42,7 +42,7 @@ New copy (site, menus, social, email) should follow [BRAND-VOICE.md](BRAND-VOICE
 ## Common edits
 
 - **Change a dish:** edit `src/data/menu.ts`; each dish is one line.
-- **Change a pairing in "You already know this food":** edit `src/data/matches.ts`. A pairing shows a photo if it has one, or a bold typographic card if not.
+- **Change a pairing in "Rooted in West Africa":** edit `src/data/matches.ts`. Each pairing has a short "where it comes from" note; keep it to history food historians agree on. A pairing shows a photo if it has one, or a bold typographic card if not.
 - **Catering requests:** the quote form posts to FormSubmit (formsubmit.co), which emails each request to the address in `src/data/site.ts` (fdgrillllc@gmail.com). The first request ever sent triggers a one-time activation email from FormSubmit; click its link or requests won't be delivered. If sending fails, the visitor gets their request back with email and text links to (610) 256-9268.
 - **Menu:** prices are intentionally not shown; catering is quoted per event.
 - **Add a photo:** export it at 640, 960 and full width as WebP plus one JPEG, put them in `public/img/`, and use the `Photo` component (`src/components/Photo.tsx`).
@@ -74,4 +74,4 @@ On Hostinger plans that run Node.js apps you can instead deploy `main` as a Node
 
 ## Photo credits
 
-All photos were supplied by FD Grill. The two grill photos in the catering section (`grill-basting-*`, `grill-overhead-*`) are the outdoor barbecue shots from the first version of the site; if they came from elsewhere online, confirm they're cleared for use or replace them. The licensed Adobe Stock images (#454202736, #1223311706) that stood in for them are in the repository history (commit `acf87cf`) if needed again.
+Photos were supplied by FD Grill, except three licensed from Adobe Stock for the "Rooted in West Africa" section: `zaame-*` (#513962672), `maafe-*` (#558652618) and `bissap-*` (#290898168). Swap in your own photos of those dishes whenever you have them. The two grill photos in the catering section (`grill-basting-*`, `grill-overhead-*`) are the outdoor barbecue shots from the first version of the site; if they came from elsewhere online, confirm they're cleared for use or replace them. The licensed Adobe Stock images (#454202736, #1223311706) that stood in for them are in the repository history (commit `acf87cf`) if needed again.

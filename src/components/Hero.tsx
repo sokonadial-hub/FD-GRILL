@@ -32,7 +32,7 @@ export function Hero() {
             <a href="#quote">Get a catering quote</a>
           </Button>
           <Button asChild variant="outline">
-            <a href="#start">Find your first dish</a>
+            <a href="#start">Explore our roots</a>
           </Button>
         </div>
       </div>

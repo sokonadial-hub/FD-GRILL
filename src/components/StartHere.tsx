@@ -6,7 +6,7 @@ import { Photo } from "@/components/Photo"
 import { MATCHES } from "@/data/matches"
 import type { Food } from "@/data/site"
 
-/** "You already know this food": pick a food you love, meet your first FD Grill dish */
+/** "Rooted in West Africa": pick a favorite, see where it comes from, meet the FD Grill dish */
 export function StartHere({ onAddFood }: { onAddFood: (food: Food) => void }) {
   const [picked, setPicked] = useState(MATCHES[0].key)
   const match = MATCHES.find((m) => m.key === picked) ?? MATCHES[0]
@@ -28,12 +28,12 @@ export function StartHere({ onAddFood }: { onAddFood: (food: Food) => void }) {
       <div className="mx-auto grid max-w-site grid-cols-[minmax(0,1fr)] content-start gap-x-[clamp(32px,6vw,96px)] gap-y-7 px-gutter py-[clamp(64px,9vw,120px)] [grid-template-areas:'intro'_'loves'_'match'] md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:grid-rows-[auto_1fr] md:[grid-template-areas:'intro_match'_'loves_match']">
         <header className="[grid-area:intro]">
           <h2 id="start-title" className="max-w-[13ch] text-[clamp(2.8rem,6vw,5.4rem)] font-extrabold tracking-[-0.025em] font-condensed">
-            You already know this food.
+            Rooted in West Africa.
           </h2>
           <p className="mt-[22px] max-w-[44ch] text-[1.15rem] text-muted-foreground">
-            Meat charred over the coals, rice cooked red with tomato, greens simmered low and slow, flaky hand pies:
-            if you've been to an American cookout, you already know these flavors. Pick what you love and we'll show
-            you where to start.
+            Red rice, greens simmered low, peanut soup, the red drink on a Juneteenth table: so much of what America
+            loves to eat goes back to West African cooks and the diaspora they built across the Atlantic. Pick a
+            favorite and see where it comes from.
           </p>
         </header>
 
@@ -84,7 +84,11 @@ export function StartHere({ onAddFood }: { onAddFood: (food: Food) => void }) {
               <h3 className="mt-1 text-[clamp(2.2rem,3.8vw,3.2rem)] font-extrabold tracking-[-0.02em] [font-stretch:78%]">
                 {match.answer}
               </h3>
-              <p className="mt-3 mb-[22px] max-w-[46ch] text-muted-foreground">{match.description}</p>
+              <div className="mt-4 border-l-[3px] border-ochre pl-4">
+                <p className="font-display text-[1.05rem] font-bold text-ember-deep font-semi-narrow">Where it comes from</p>
+                <p className="mt-1 max-w-[52ch] text-charcoal">{match.roots}</p>
+              </div>
+              <p className="mt-4 mb-[22px] max-w-[46ch] text-muted-foreground">{match.description}</p>
               <Button asChild variant="dark">
                 <a href="#quote" onClick={() => onAddFood(match.food)}>
                   Add {match.short} to my quote

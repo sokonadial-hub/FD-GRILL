@@ -4,7 +4,7 @@ import { asset } from "@/components/Photo"
 import { cn } from "@/lib/utils"
 
 const NAV = [
-  ["#start", "Start here"],
+  ["#start", "Roots"],
   ["#story", "Our story"],
   ["#catering", "Catering"],
   ["#menu", "Menu"],
